@@ -1,5 +1,6 @@
 # Junkeun Park's CV
->This will be a seed to my ultimate CV, I hope...
+>This will be a seed to my ultimate CV, I hope...  
+But too lazy;not updated since... Today.
 ## Work Experience
 ### UNESCO APCEIU (July 6th, 2015 ~ August 5th, 2015)
 #### Seoul, South Korea

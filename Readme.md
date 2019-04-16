@@ -7,3 +7,8 @@
 1. Install Plugins for [Syntax Checking/Highlighting](https://realpython.com/vim-and-python-a-match-made-in-heaven/#syntax-checkinghighlighting).
 1. Done!
 - Colorschemes? Do it on your own.
+### GPIO Zero Dependency
+#### Why do I get PinFactoryFallback warnings when I import gpiozero?
+- source: [Here](https://gpiozero.readthedocs.io/en/stable/faq.html#why-do-i-get-pinfactoryfallback-warnings-when-i-import-gpiozero)  
+
+` $ pip3 install rip.gpio `

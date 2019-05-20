@@ -1,3 +1,4 @@
 # Branch Test
 
-Master: Initial commit
+Master: Initial commit  
+Branch1: Created branch1

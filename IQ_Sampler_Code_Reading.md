@@ -13,9 +13,19 @@ Ex. my_header.h 에 이 보호장치를 하려면
 #endif _MY_HEADER_
 ```
 - 언더바를 앞뒤로 몇 개나 붙일지는 상사의 convention을 따르자.
+### `\r`
+- Source: [[C/C++] C언어 이스케이프 문자(Escape Character, 이스케이프 시퀀스)](https://arer.tistory.com/95)
+- 캐리지 리턴: 커서를 현재 줄의 처음으로 옮김.
 ## `bg.h`
 ### `typedef enum { ... } ConnState`
-- 연결상태를 7가지로 구분한다: `scanning`, `opening`, `discoverService`, 'discoverCharacteristics
+- 연결상태를 7가지로 구분한다.
+- `scanning`
+- `opening`
+- `discoverService`
+- `discoverCharacteristics`
+- `enableNotifications`
+- `enableCTE`
+- `running`
 ## `bg.c`
 ## `common.h`
 ### `_WIN32_WINNT, WINVER`
@@ -29,3 +39,10 @@ Ex. my_header.h 에 이 보호장치를 하려면
 - `azimuth`: x축에서 y축으로 반시계로 도는 각
 - `elevation`: 바닥에서 z축으로 일어서는 각
 - `distance`: 반지름
+## `main.c`
+### `fgets`
+- Source: [70.4 파일에서 문자열 읽기](https://dojang.io/mod/page/view.php?id=610)
+### `fscanf`
+- Source: [70.2 서식을 지정하여 파일에서 문자열 읽기](https://dojang.io/mod/page/view.php?id=608)
+### Thread 쓰레드
+- `CreateThread`

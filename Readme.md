@@ -12,3 +12,5 @@
 - source: [Here](https://gpiozero.readthedocs.io/en/stable/faq.html#why-do-i-get-pinfactoryfallback-warnings-when-i-import-gpiozero)  
 
 ` $ pip3 install rip.gpio `
+### make and makefile Cheetsheat
+- Sourse: [make와 Makefile](https://bowbowbow.tistory.com/12)

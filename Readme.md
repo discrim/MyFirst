@@ -9,8 +9,11 @@
 - Colorschemes? Do it on your own.
 ### GPIO Zero Dependency
 #### Why do I get PinFactoryFallback warnings when I import gpiozero?
-- source: [Here](https://gpiozero.readthedocs.io/en/stable/faq.html#why-do-i-get-pinfactoryfallback-warnings-when-i-import-gpiozero)  
+- Source: [Here](https://gpiozero.readthedocs.io/en/stable/faq.html#why-do-i-get-pinfactoryfallback-warnings-when-i-import-gpiozero)  
 
 ` $ pip3 install rip.gpio `
 ### make and makefile Cheetsheat
-- Sourse: [make와 Makefile](https://bowbowbow.tistory.com/12)
+- Source: [make와 Makefile](https://bowbowbow.tistory.com/12)
+### Linux용 Windows 하위 시스템 / Windows Subsystem for Linux 's actual directory
+- Source: [Windows 10 - Ubuntu on Windows 10 서로간 파일 시스템 접근하기](https://snowdeer.github.io/windows/2018/01/07/windows10-ubuntu-file-directory/)  
+`C:\Users\<username>\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs`

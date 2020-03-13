@@ -52,3 +52,5 @@ int main(int argc, char* argv[])
   return 0;
 }
 ```
+### make and makefile
+- Source: [make와 Makefile](https://bowbowbow.tistory.com/12)

@@ -49,3 +49,12 @@ It contains:
 1.333
 ```
 - Used in W20 EECS 598-006 HW07 P2(j)
+### Random Number Generation
+```julia
+using Random: seed! # rand(), randn() do not require this package
+seed!(0)
+a = rand(3)     # 3-element array with 3 random floats.
+a = rand(2, 4)  # 2 by 4 matrix with 8 random floats.
+a = randn(3)    # 3-element array with 3 noramlly distributed floats.
+a = randn(2, 4) # 2 by 4 matrix with 8 normally distributed floats.
+```

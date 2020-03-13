@@ -19,3 +19,8 @@ Source: [Stackoverflow](https://stackoverflow.com/questions/6951672/how-can-i-in
 ### Command Mode Commands (Case-Sensitive)
 - `:NUMBER`: Jump to NUMBERth line. E.g.`:5` jumps you to 5th line.
 - `u`: Undo
+### Tab Multiple Lines
+Sourse: [fir3net.com](https://www.fir3net.com/UNIX/General/how-do-i-tab-multiple-lines-within-vi.html)
+1. Press "SHIFT + v" to enter VISUAL LINE mode.
+1. Select the text you wish to indent but using either the cursor keys or the "j" and "k" keys.
+1. To indent press "SHIFT + dot" (> character).

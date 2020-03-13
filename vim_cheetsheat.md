@@ -16,3 +16,6 @@ filetype indent on
 Source: [Stackoverflow](https://stackoverflow.com/questions/6951672/how-can-i-insert-a-real-tab-character-in-vim/6951704)  
 - Type CTRL + V then TAB.
 - Using CTRL + V signals Vim that it should take the next character literally. Even in insert mode.
+### Command Mode Commands (Case-Sensitive)
+- `:NUMBER`: Jump to NUMBERth line. E.g.`:5` jumps you to 5th line.
+- `u`: Undo

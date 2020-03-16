@@ -1,4 +1,15 @@
 # Python Cheetsheat
+### Line Continuation
+Source: [Stackoverflow](https://stackoverflow.com/questions/53162/how-can-i-do-a-line-break-line-continuation-in-python)  
+Enclose with parantheses or add backslash.
+```python
+a = ((i1 < 20) and
+     (i2 < 30) and
+     (i3 < 40))
+b = (i1 < 20) and \
+    (i2 < 30) and \
+    (i3 < 40)
+```
 ### Class
 Source: [점프 투 파이썬](https://wikidocs.net/28)
 #### Basics

@@ -129,5 +129,25 @@ Ref: https://pytorch.org/docs/stable/optim.html
 ## Assignment 7
 ### Step 2: Build Generator and Discriminator
 - Ref: https://github.com/znxlwm/pytorch-CycleGAN/blob/master/network.py
+### `torch.cat`
+- Source: [PyTorch](https://pytorch.org/docs/stable/torch.html)
+```python
+>>> x = torch.randn(2, 3)
+>>> x
+tensor([[ 0.6580, -1.0969, -0.4614],
+        [-0.1034, -0.5790,  0.1497]])
+>>> torch.cat((x, x, x), 0)
+tensor([[ 0.6580, -1.0969, -0.4614],
+        [-0.1034, -0.5790,  0.1497],
+        [ 0.6580, -1.0969, -0.4614],
+        [-0.1034, -0.5790,  0.1497],
+        [ 0.6580, -1.0969, -0.4614],
+        [-0.1034, -0.5790,  0.1497]])
+>>> torch.cat((x, x, x), 1)
+tensor([[ 0.6580, -1.0969, -0.4614,  0.6580, -1.0969, -0.4614,  0.6580,
+         -1.0969, -0.4614],
+        [-0.1034, -0.5790,  0.1497, -0.1034, -0.5790,  0.1497, -0.1034,
+         -0.5790,  0.1497]])
+```
 
 

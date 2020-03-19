@@ -126,7 +126,7 @@ Ref: https://pytorch.org/docs/stable/optim.html
 ### Effect of Batch Normalization
 - Source: https://light-tree.tistory.com/139
 - Source: https://light-tree.tistory.com/132
-## Assignment 7
+## Assignment 7-1 
 ### Step 2: Build Generator and Discriminator
 - Ref: https://github.com/znxlwm/pytorch-CycleGAN/blob/master/network.py
 ### `torch.cat`
@@ -149,5 +149,20 @@ tensor([[ 0.6580, -1.0969, -0.4614,  0.6580, -1.0969, -0.4614,  0.6580,
         [-0.1034, -0.5790,  0.1497, -0.1034, -0.5790,  0.1497, -0.1034,
          -0.5790,  0.1497]])
 ```
-
-
+### Assignemtn 7-2 Receptive Field
+- Receptive Field: Result's width and height of convolving image and filter.  
+E.g.
+```python  
+# image.shape == (8, 8)  
+# filter.shape == (4, 4)  
+# stride == 2  
+■■■■□□□□  □□■■■■□□  □□□□■■■■  □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  
+■□□■□□□□  □□■□□■□□  □□□□■□□■  □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  
+■□□■□□□□  □□■□□■□□  □□□□■□□■  ■■■■□□□□  □□■■■■□□  □□□□■■■■  □□□□□□□□  □□□□□□□□  □□□□□□□□  
+■■■■□□□□  □□■■■■□□  □□□□■■■■  ■□□■□□□□  □□■□□■□□  □□□□■□□■  □□□□□□□□  □□□□□□□□  □□□□□□□□  
+□□□□□□□□  □□□□□□□□  □□□□□□□□  ■□□■□□□□  □□■□□■□□  □□□□■□□■  ■■■■□□□□  □□■■■■□□  □□□□■■■■  
+□□□□□□□□  □□□□□□□□  □□□□□□□□  ■■■■□□□□  □□■■■■□□  □□□□■■■■  ■□□■□□□□  □□■□□■□□  □□□□■□□■  
+□□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  ■□□■□□□□  □□■□□■□□  □□□□■□□■  
+□□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  ■■■■□□□□  □□■■■■□□  □□□□■■■■  
+```
+So the receptive field is `(3, 3)`.

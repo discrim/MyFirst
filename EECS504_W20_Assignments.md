@@ -150,6 +150,8 @@ tensor([[ 0.6580, -1.0969, -0.4614,  0.6580, -1.0969, -0.4614,  0.6580,
          -0.5790,  0.1497]])
 ```
 ### Assignemtn 7-2 Receptive Field
+Source: [GSI wrote this link on a reply at Piazza](https://machinelearningmastery.com/how-to-implement-pix2pix-gan-models-from-scratch-with-keras/)
+Below is a legacy.
 - Receptive Field: Result's width and height of convolving image and filter.  
 E.g.
 ```python  

@@ -31,6 +31,7 @@ setInterval(CleanCurrentOutput,1000*60*30);
 ```
 ### Use Data from Google Drive
 Source: [테디노트](https://teddylee777.github.io/machine-learning/Google-colab%EC%9C%BC%EB%A1%9C-GPU-%EB%B6%80%EC%8A%A4%ED%8A%B8%EB%B0%9B%EC%95%84-machine-learning-%ED%95%99%EC%8A%B5%ED%95%98%EA%B8%B0)
+- 파일 이름이 숫자로 시작하면 오류남. Error occurs with file names starting with numbers.
 ## Assignment 1
 ## Assignment 2
 ## Assignment 3-1 Motion Magnifying

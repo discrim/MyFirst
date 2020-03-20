@@ -49,7 +49,7 @@ print("b.mul(): ", b.mul())
 print("b.sub(): ", b.sub())
 print("b.div(): ", b.div())
 ```
-```
+```python
 a.opnd1:  4
 b.opnd1:  3
 id(a.opnd1):  1632303072
@@ -62,6 +62,7 @@ b.add():  10
 b.mul():  21
 b.sub():  -4
 b.div():  0.42857142857142855
+>>>
 ```
 - `self`: Instance
 #### Constructor
@@ -90,11 +91,12 @@ print("a.opnd2: ", a.opnd2)
 print("a.add(): ", a.add())
 print("a.div(): ", a.div())
 ```
-```
+```python
 a.add():  6
 a.mul():  8
 a.sub():  2
 a.div():  2.0
+>>>
 ```
 #### Inheritance
 ```python
@@ -126,12 +128,13 @@ print("a.sub(): ", a.sub())
 print("a.div(): ", a.div())
 print("a.pow(): ", a.pow())
 ```
-```
+```python
 a.add():  6
 a.mul():  8
 a.sub():  2
 a.div():  2.0
 a.pow():  16
+>>>
 ```
 #### Method Overriding
 ```python
@@ -162,8 +165,9 @@ a = SafeFourCal(4, 0)
 
 print("a.div(): ", a.div())
 ```
-```
+```python
 a.div():  0
+>>>
 ```
 #### Class variable
 ```python
@@ -188,7 +192,7 @@ print("id(Family.lastname): ", id(Family.lastname))
 print("id(a.lastname): ", id(a.lastname))
 print("id(b.lastname): ", id(b.lastname))
 ```
-```
+```python
 Family.lastname:  Kim
 a.lastname:  Kim
 b.lastname:  Kim
@@ -198,4 +202,23 @@ b.lastname:  Park
 id(Family.lastname):  59794464
 id(a.lastname):  59794464
 id(b.lastname):  59794464
+>>>
+```
+### String Formatting (C언어의 format specifiers)
+Source: [learnpython.org](https://www.learnpython.org/en/String_Formatting), [Python Official](https://docs.python.org/3/library/string.html#format-examples)
+2가지 방법이 있다.
+- The old %-formatting
+- `str.format()`
+```python
+print("String: %s, Integer: %d, Floating Point Number: %4.3f" % ('Hello', 13, 5.39))
+print("String: {0}, Integer: {1}, Floating Point Number: {2}".format('Hello', 13, 5.39))
+print("String: {}, Integer: {}, Floating Point Number: {}".format('Hello', 13, 5.39))
+print("String: {2}, Integer: {0}, Floating Point Number: {1}".format(13, 5.39, 'Hello'))
+```
+```python
+String: Hello, Integer: 13, Floating Point Number: 5.390
+String: Hello, Integer: 13, Floating Point Number: 5.39
+String: Hello, Integer: 13, Floating Point Number: 5.39
+String: Hello, Integer: 13, Floating Point Number: 5.39
+>>>
 ```

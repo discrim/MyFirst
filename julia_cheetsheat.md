@@ -54,7 +54,7 @@ savefig(plot_variable, string(@__DIR__, "/filename.png")
 ### Punctuations
 Source: [Official > Base > Punctuation](https://docs.julialang.org/en/v1/base/punctuation/)
 It contains:
-- Multi-line Comments
+- `#=` ~ `=#`: Multi-line Comments
 - `<:` subtype operator
 
 ### Precision or Round

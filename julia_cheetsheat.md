@@ -43,9 +43,10 @@ scatter!(k, ccv, markershape=:+, label="Psi(xk) of ncg_inv")
 ```
 - Choose `markershape` from `Symbol[:none, :auto, :circle, :rect, :star5, :diamond, :hexagon, :cross, :xcross, :utriangle, :dtriangle, :rtriangle, :ltriangle, :pentagon, :heptagon, :octagon, :star4, :star6, :star7, :star8, :vline, :hline, :+, :x]`
 #### `savefig`
-- `savefig(plot_variable, "filename.png")
-- Location is 'Current Project's Folder' i.e. `@__DIR__` which actually means a location that current `.jl` file exists. It is different from 'Current File's Folder', i.e. `@__FILE__`.
-- Thus, the following will be robust (using string concatenation):
+- `savefig(plot_variable, "filename.png")`
+- Saving location is 'Current Project's Folder' i.e. `@__DIR__` which actually means a location that current `.jl` file exists.  
+It is different from 'Current File's Folder', i.e. `@__FILE__`.
+- Thus, the following is a robust way to save figure to where the current `.jl` file is located (using string concatenation):
 ```julia
 savefig(plot_variable, string(@__DIR__, "/filename.png")
 ```

@@ -9,7 +9,6 @@ This is a list of references which I looked up while doing assignments, and some
 1. [Assignment 2](#assignment_2)
 1. [Assignment 3-1 Motion Magnifying](#assignment_3-1_motion_magnifying)
 
-<a name='colab'></a>
 ## Colab
 <a name='prevent_disconnecting'></a>
 ### Prevent Disconnecting

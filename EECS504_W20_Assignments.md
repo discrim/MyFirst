@@ -21,18 +21,18 @@ This is a list of references which I looked up while doing assignments, and some
 	1. [Normalize a kernel, matrix, etc. (Make the sum of the elements equal to 1)](#normalize-a-kernel-matrix-etc-make-the-sum-of-the-elements-equal-to-1)
 	1. [Return indices of nonzero elements](#return-indices-of-nonzero-elements)
 	1. [Make a Boolean array from a numeric array](#make-a-boolean-array-from-a-numeric-array)
-	1. [numpy.expand_dims](#numpyexpand_dims)
-	1. [numpy.broadcast_to](#numpybroadcast_to)
-	1. [numpy.pad](#numpypad)
-	1. [numpy.amin](#numpyamin)
-	1. [scipy.ndimage.binary_dialation](#scipyndimagebinary_dialation)
-	1. [numpy.asarray](#numpyasarray)
-	1. [numpy.any](#numpyany)
-	1. [cv2_imshow(im)](#cv2_imshowim)
+	1. [`numpy.expand_dims`](#numpyexpand_dims)
+	1. [`numpy.broadcast_to`](#numpybroadcast_to)
+	1. [`numpy.pad`](#numpypad)
+	1. [`numpy.amin`](#numpyamin)
+	1. [`scipy.ndimage.binary_dialation`](#scipyndimagebinary_dialation)
+	1. [`numpy.asarray`](#numpyasarray)
+	1. [`numpy.any`](#numpyany)
+	1. [`cv2_imshow(im)`](#cv2_imshowim)
 1. [Assignment 4-1 Multi-layer Perceptron](#assignment-4-1-multi-layer-perceptron)
 	1. [Shape](#shape)
 	1. [Reshape](#reshape)
-	1. [np.ones_like(x)](#npones_likex)
+	1. [`np.ones_like(x)`](#npones_likex)
 	1. [ReLU](#relu)
 	1. [Fully-Connected Layer (FC Layer)](#fully-connected-layer-fc-layer)
 	1. [Row-wise maximum](#row-wise-maximum)
@@ -53,6 +53,7 @@ This is a list of references which I looked up while doing assignments, and some
 1. [Assignment 7-1](#assignment-7-1)
 	1. [Step 2: Build Generator and Discriminator](#step-2-build-generator-and-discriminator)
 	1. [`torch.cat`](#torchcat)
+1. [Assignment 7-2 Receptive Field](#assignemtn-7-2-receptive-field)
 
 ## Colab
 ### Prevent Disconnecting
@@ -233,9 +234,9 @@ tensor([[ 0.6580, -1.0969, -0.4614,  0.6580, -1.0969, -0.4614,  0.6580,
         [-0.1034, -0.5790,  0.1497, -0.1034, -0.5790,  0.1497, -0.1034,
          -0.5790,  0.1497]])
 ```
-### Assignemtn 7-2 Receptive Field
+## Assignemtn 7-2 Receptive Field
 Source: [GSI wrote this link on a reply at Piazza](https://machinelearningmastery.com/how-to-implement-pix2pix-gan-models-from-scratch-with-keras/)
-Below is a legacy.
+. Below is a legacy.
 - Receptive Field: Result's width and height of convolving image and filter.  
 E.g.
 ```python  

@@ -253,3 +253,63 @@ E.g.
 □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  ■■■■□□□□  □□■■■■□□  □□□□■■■■  
 ```
 So the receptive field is `(3, 3)`.
+## Assignment 8
+### Constructing learning layers
+Below is an example.
+```python
+class Encoder(nn.Module):
+    def __init__(self, in_channels=3):
+        super(Encoder, self).__init__()
+        self.encoder = nn.Sequential(
+            nn.Conv2d(3, 12, kernel_size=4, stride=2, padding=1),
+            nn.ReLU(0.2),
+            nn.Conv2d(12, 24, 4, 2, 1),
+            nn.ReLU(0.2),
+            nn.Conv2d(24, 48, 4, 2, 1),
+            nn.ReLU(0.2),
+            nn.Conv2d(48, 24, 4, 2, 1),
+            nn.ReLU(0.2)
+        )
+
+    def forward(self, x):
+        '''
+        Given an image x, return the encoded latent representation h.
+
+        Args:
+            x: torch.tensor
+
+        Return: 
+            h: torch.tensor
+        '''
+        
+        h = self.encoder(x)
+
+        return h
+
+# Print out the neural network architectures and activation dimensions.
+encoder = Encoder().to(device)
+summary(encoder, [(3, 64, 64)])
+```
+```
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 12, 32, 32]             588
+              ReLU-2           [-1, 12, 32, 32]               0
+            Conv2d-3           [-1, 24, 16, 16]           4,632
+              ReLU-4           [-1, 24, 16, 16]               0
+            Conv2d-5             [-1, 48, 8, 8]          18,480
+              ReLU-6             [-1, 48, 8, 8]               0
+            Conv2d-7             [-1, 24, 4, 4]          18,456
+              ReLU-8             [-1, 24, 4, 4]               0
+================================================================
+Total params: 42,156
+Trainable params: 42,156
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.05
+Forward/backward pass size (MB): 0.33
+Params size (MB): 0.16
+Estimated Total Size (MB): 0.54
+----------------------------------------------------------------
+```

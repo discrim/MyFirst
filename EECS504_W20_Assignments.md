@@ -2,15 +2,14 @@
 This is a list of references which I looked up while doing assignments, and some points that I can easily commit a mistake on.
 # Table of Contents
 1. [Colab](#colab)
-    1. [Prevent Disconnecting](#prevent_disconnecting)
-    1. [Clear Output Every 30 mins](#clear_output_every_30_mins)
-    1. [Use Data from Google Drive](#use_data_from_google_drive)
-1. [Assignment 1](#assignment_1)
-1. [Assignment 2](#assignment_2)
-1. [Assignment 3-1 Motion Magnifying](#assignment_3-1_motion_magnifying)
+    1. [Prevent Disconnecting](#prevent-disconnecting)
+    1. [Clear Output Every 30 mins](#clear-output-every-30-mins)
+    1. [Use Data from Google Drive](#use-data-from-google-drive)
+1. [Assignment 1](#assignment-1)
+1. [Assignment 2](#assignment-2)
+1. [Assignment 3-1 Motion Magnifying](#assignment-3-1-motion-magnifying)
 
 ## Colab
-<a name='prevent_disconnecting'></a>
 ### Prevent Disconnecting
 Source: [Google Colab 런타임 연결 끊김 방지](https://bryan7.tistory.com/1077)
 ```javascript
@@ -27,7 +26,6 @@ function ClickConnect() {
 }
 setInterval(ClickConnect,1000*60);
 ```
-<a name='clear_output_every_30_mins'></a>
 ### Clear Output Every 30 mins
 Source: [Google Colab 런타임 연결 끊김 방지](https://bryan7.tistory.com/1077)
 ```javascript
@@ -40,15 +38,11 @@ function CleanCurrentOutput(){
 }
 setInterval(CleanCurrentOutput,1000*60*30);
 ```
-<a name='use_data_from_google_drive'></a>
 ### Use Data from Google Drive
 Source: [테디노트](https://teddylee777.github.io/machine-learning/Google-colab%EC%9C%BC%EB%A1%9C-GPU-%EB%B6%80%EC%8A%A4%ED%8A%B8%EB%B0%9B%EC%95%84-machine-learning-%ED%95%99%EC%8A%B5%ED%95%98%EA%B8%B0)
 - 파일 이름이 숫자로 시작하면 오류남. Error occurs with file names starting with numbers.
-<a name='assignment_1'></a>
 ## Assignment 1
-<a name='assignment_2'></a>
 ## Assignment 2
-<a name='assignment_3-1_motion_magnifying'></a>
 ## Assignment 3-1 Motion Magnifying
 ### Square
 ** (double asterisk). Applies to scalar and `np.ndarray` (element-wise).

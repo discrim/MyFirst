@@ -204,6 +204,43 @@ id(a.lastname):  59794464
 id(b.lastname):  59794464
 >>>
 ```
+#### `super()`
+Source: [Tistory](https://rednooby.tistory.com/56), [#ashcode](https://hashcode.co.kr/questions/6419/python3-super%EC%99%80-supera-self%EC%9D%98-%EC%B0%A8%EC%9D%B4%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94)  
+자식 클래스가 부모 클래스의 메소드를 사용하려면 How to let a child class use its parent's method
+1. 부모 클래스의 함수를 재정의하지 않는다. Don't redefine the parent's method.
+```python
+class father():
+    def handsome():
+        print("Handsome!")
+
+class brother():
+    # Don't redefine handsome()
+
+bro = brother()
+bro.handsome()
+```
+```
+Handsome!
+>>>
+```
+2. 부모 클래스의 함수를 재정의하고 `super()`를 사용한다. Redefine the parent's method and use `super()`.
+```python
+class father():
+    def handsome():
+        print("Handsome!")
+
+class brother():
+    def handsome():
+        super().handsome()  # Equivalent: super(father, self).handsome()
+        # You can edit this brother version of handsome() if you add codes.
+
+bro = brother()
+bro.handsome()
+```
+```
+Handsome!
+>>>
+```
 ### String Formatting (C언어의 format specifiers)
 Source: [learnpython.org](https://www.learnpython.org/en/String_Formatting), [Python Official](https://docs.python.org/3/library/string.html#format-examples)
 2가지 방법이 있다.

@@ -145,11 +145,11 @@ Ref: https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader
 ### Model
 Source: https://github.com/pytorch/vision/blob/master/torchvision/models/vgg.py
 ### `nn.Sequential`
-Ref: https://pytorch.org/docs/stable/nn.html
+Ref: https://pytorch.org/docs/stable/nn.html#sequential
 ### Optimizer
 Ref: https://pytorch.org/docs/stable/optim.html
 ### Cross Entropy Loss
-- Ref: https://pytorch.org/docs/stable/nn.html
+- Ref: https://pytorch.org/docs/stable/nn.html#crossentropyloss
 - Source: https://discuss.pytorch.org/t/interpreting-loss-value/17665/2
 ### Train model
 - Ref: https://discuss.pytorch.org/t/newbie-multi-target-runtime-error-when-classifying-dataset-with-multi-class-target/37678

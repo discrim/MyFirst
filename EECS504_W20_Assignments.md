@@ -8,6 +8,28 @@ This is a list of references which I looked up while doing assignments, and some
 1. [Assignment 1](#assignment-1)
 1. [Assignment 2](#assignment-2)
 1. [Assignment 3-1 Motion Magnifying](#assignment-3-1-motion-magnifying)
+	1. [Square](#square)
+	1. [Element-whise Multiplication](#element-wise-multiplication)
+	1. [Meshgrid](#meshgrid)
+	1. [Gaussian Kernel](#gaussian-kernel)
+	1. [TypeError: return arrays must be of ArrayType - Stack Overflow](#typeerror-return-arrays-must-be-of-arraytype---stack-overflow)
+	1. [Line Continuation](#line-continuation)
+	1. [Forming a complex number with magnitude and phase](#forming-a-complex-number-with-magnitude-and-phase)
+	1. [About (d)](#about-d)
+1. [Assignment 3-2 Texture Synthesis](#assignment-3-2-texture-synthesis)
+	1. [Sum all elements in a matrix(ndarray)](#sum-all-elements-in-a-matrixndarray)
+	1. [Normalize a kernel, matrix, etc. (Make the sum of the elements equal to 1)](#normalize-a-kernel-matrix-etc-make-the-sum-of-the-elements-equal-to-1)
+	1. [Return indices of nonzero elements](#return-indices-of-nonzero-elements)
+	1. [Make a Boolean array from a numeric array](#make-a-boolean-array-from-a-numeric-array)
+	1. [numpy.expand_dims](#numpyexpand_dims)
+	1. [numpy.broadcast_to](#numpybroadcast_to)
+	1. [numpy.pad](#numpypad)
+	1. [numpy.amin](#numpyamin)
+	1. [scipy.ndimage.binary_dialation](#scipyndimagebinary_dialation)
+	1. [numpy.asarray](#numpyasarray)
+	1. [numpy.any](#numpyany)
+	1. [cv2_imshow(im)](#cv2_imshowim)
+	1. [Assignment 4-1 Multi-layer Perceptron](#assignment-4-1-multi-layer-perceptron)
 
 ## Colab
 ### Prevent Disconnecting
@@ -96,7 +118,7 @@ boolarr = numarr != 0
 ```
 boolarr == [[True, True], [False, True]]
 ```
-### `numpy.expand _dims`
+### `numpy.expand_dims`
 https://docs.scipy.org/doc/numpy/reference/generated/numpy.expand_dims.html
 ### `numpy.broadcast_to`
 https://docs.scipy.org/doc/numpy/reference/generated/numpy.broadcast_to.html
@@ -113,7 +135,8 @@ https://docs.scipy.org/doc/numpy/reference/generated/numpy.any.html
 ### `cv2_imshow(im)`
 The ‘im’ should range from 0 to 255, so multiply 255 if the previous result ranges from 0 to 1.
 ## Assignment 4-1 Multi-layer Perceptron
-### numpy.ndarray.shape
+### Shape
+`x.shape`
 ### Reshape
 - Source: [Scipy](https://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html)
 - `myarray.reshape((row, col))` or `reshape(myarray, (row, col))`
@@ -123,8 +146,6 @@ The ‘im’ should range from 0 to 255, so multiply 255 if the previous result 
 `ReLU = x * (x > 0)`
 ### Fully-Connected Layer (FC Layer)
 https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/fc_layer.html
-### Shape
-`x.shape`
 ### Row-wise maximum
 `np.amax(array, axis=1)`
 ### Matrix multiplication

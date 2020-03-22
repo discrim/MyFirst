@@ -1,5 +1,9 @@
 # EECS504 W20 Assignments
 This is a list of references which I looked up while doing assignments, and some points that I can easily commit a mistake on.
+# Table of Contents
+1. [Colab](#colab)
+
+<a name='colab'></a>
 ## Colab
 ### Prevent Disconnecting
 Source: [Google Colab 런타임 연결 끊김 방지](https://bryan7.tistory.com/1077)

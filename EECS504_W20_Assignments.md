@@ -57,6 +57,7 @@ This is a list of references which I looked up while doing assignments, and some
 1. [Assignment 8-1 Self-supervised learning: Autoencoders](#assignment-8-1-self-supervised-learning-autoencoders)
 	1. [Constructing autoencoder learning layers](#constructing-learning-layers)
 	1. [Training Autoencoder](#training-autoencoder)
+		1. [Convert a Tensor to use with GPU](#convert-a-tensor-to-use-with-gpu)
 	1. [Training Linear Classifier](#training-linear-classifier)
 
 ## Colab
@@ -333,6 +334,13 @@ for epoch in range(num_epochs):
         optimizer.step()
     # ===================log========================
     print('epoch [{}/{}], loss:{:.4f}'.format(epoch+1, num_epochs, loss.data()))
+```
+#### Convert a Tensor to use with GPU
+```python
+# Usually in skeleton
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+...
+x = x.to(device)
 ```
 ### Training Linear Classifier
 Source: [Pytorch Official](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html)

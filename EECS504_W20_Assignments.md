@@ -60,6 +60,11 @@ Late days used: 5(1), 7(1)
 	1. [Training Autoencoder](#training-autoencoder)
 		1. [Convert a Tensor to use with GPU](#convert-a-tensor-to-use-with-gpu)
 	1. [Training Linear Classifier](#training-linear-classifier)
+		1. [`view()`](#view)
+1. [Assignment 8-2 Self-supervised learning: Contrastive Multiview Coding (CMC)](#assignment-8-2-self-supervised-learning-contrastive-multiview-coding-cmc)
+	1. [Building CMC Encoders](#building-cmc-encoders)
+		1. [CUDA, GPU, cpu related error](#cuda-gpu-cpu-related-error)
+		1. [Swaping axes of tensor in PyTorch](#swaping-axes-of-tensor-in-pytorch)
 
 ## Colab
 ### Prevent Disconnecting

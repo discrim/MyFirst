@@ -334,7 +334,7 @@ for epoch in range(num_epochs):
     # ===================log========================
     print('epoch [{}/{}], loss:{:.4f}'.format(epoch+1, num_epochs, loss.data()))
 ```
-### Train Linear Classifier
+### Training Linear Classifier
 Source: [Pytorch Official](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html)
 ```python
 

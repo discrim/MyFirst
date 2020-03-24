@@ -53,10 +53,11 @@ This is a list of references which I looked up while doing assignments, and some
 1. [Assignment 7-1](#assignment-7-1)
 	1. [Step 2: Build Generator and Discriminator](#step-2-build-generator-and-discriminator)
 	1. [`torch.cat`](#torchcat)
-1. [Assignment 7-2 Receptive Field](#assignemtn-7-2-receptive-field)
+1. [Assignment 7-2 Receptive Field](#assignment-7-2-receptive-field)
 1. [Assignment 8-1 Self-supervised learning: Autoencoders](#assignment-8-1-self-supervised-learning-autoencoders)
 	1. [Constructing autoencoder learning layers](#constructing-learning-layers)
 	1. [Training Autoencoder](#training-autoencoder)
+	1. [Training Linear Classifier](#training-linear-classifier)
 
 ## Colab
 ### Prevent Disconnecting
@@ -237,7 +238,7 @@ tensor([[ 0.6580, -1.0969, -0.4614,  0.6580, -1.0969, -0.4614,  0.6580,
         [-0.1034, -0.5790,  0.1497, -0.1034, -0.5790,  0.1497, -0.1034,
          -0.5790,  0.1497]])
 ```
-## Assignemtn 7-2 Receptive Field
+## Assignment 7-2 Receptive Field
 Source: [GSI wrote this link on a reply at Piazza](https://machinelearningmastery.com/how-to-implement-pix2pix-gan-models-from-scratch-with-keras/)
 . Below is a legacy.
 - Receptive Field: Result's width and height of convolving image and filter.  
@@ -257,7 +258,7 @@ E.g.
 ```
 So the receptive field is `(3, 3)`.
 ## Assignment 8-1 Self-supervised learning: Autoencoders
-### Constructing learning layers
+### Constructing Learning Layers
 Below is an example.
 ```python
 class Encoder(nn.Module):
@@ -332,4 +333,31 @@ for epoch in range(num_epochs):
         optimizer.step()
     # ===================log========================
     print('epoch [{}/{}], loss:{:.4f}'.format(epoch+1, num_epochs, loss.data()))
+```
+### Train Linear Classifier
+Source: [Pytorch Official](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html)
+```python
+
+    running_loss = 0.0
+    for i, data in enumerate(trainloader, 0):
+        # get the inputs; data is a list of [inputs, labels]
+        inputs, labels = data
+
+        # zero the parameter gradients
+        optimizer.zero_grad()
+
+        # forward + backward + optimize
+        outputs = net(inputs)
+        loss = criterion(outputs, labels)
+        loss.backward()
+        optimizer.step()
+
+        # print statistics
+        running_loss += loss.item()
+        if i % 2000 == 1999:    # print every 2000 mini-batches
+            print('[%d, %5d] loss: %.3f' %
+                  (epoch + 1, i + 1, running_loss / 2000))
+            running_loss = 0.0
+
+print('Finished Training')
 ```

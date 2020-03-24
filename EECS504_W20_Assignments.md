@@ -1,5 +1,6 @@
 # EECS504 W20 Assignments
 This is a list of references which I looked up while doing assignments, and some points that I can easily commit a mistake on.
+Late days used: 5(1), 7(1)
 # Table of Contents
 1. [Colab](#colab)
     1. [Prevent Disconnecting](#prevent-disconnecting)

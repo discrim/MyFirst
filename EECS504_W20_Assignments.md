@@ -54,7 +54,7 @@ This is a list of references which I looked up while doing assignments, and some
 	1. [Step 2: Build Generator and Discriminator](#step-2-build-generator-and-discriminator)
 	1. [`torch.cat`](#torchcat)
 1. [Assignment 7-2 Receptive Field](#assignemtn-7-2-receptive-field)
-1. [Assignment 8-1 Self-supervised learning: Autoencoders](assignment-8-1-self-supervised-learning-autoencoders)
+1. [Assignment 8-1 Self-supervised learning: Autoencoders](#assignment-8-1-self-supervised-learning-autoencoders)
 	1. [Constructing autoencoder learning layers](#constructing-learning-layers)
 	1. [Training Autoencoder](#training-autoencoder)
 

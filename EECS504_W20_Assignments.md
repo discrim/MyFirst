@@ -169,7 +169,7 @@ The ‘im’ should range from 0 to 255, so multiply 255 if the previous result 
 `x.shape`
 ### Reshape
 - Source: [Scipy](https://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html)
-- `myarray.reshape((row, col))` or `reshape(myarray, (row, col))`
+- `x.reshape((row, col))` or `reshape(x, (row, col))`
 - One shape dimension can be -1; this value will be inferred from the length and the other determined dimensions.
 ### `np.ones_like(x)`
 ### ReLU
@@ -346,27 +346,34 @@ x = x.to(device)
 ### Training Linear Classifier
 Source: [Pytorch Official](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html)
 ```python
+x , y = x.to(device), y.to(device)
+optimizer.zero_grad()
 
-    running_loss = 0.0
-    for i, data in enumerate(trainloader, 0):
-        # get the inputs; data is a list of [inputs, labels]
-        inputs, labels = data
+# Forward
+outs = encoder(x).view(batch_size, -1)
+outs = cls(outs)
+loss = criterion(outs, y)
 
-        # zero the parameter gradients
-        optimizer.zero_grad()
-
-        # forward + backward + optimize
-        outputs = net(inputs)
-        loss = criterion(outputs, labels)
-        loss.backward()
-        optimizer.step()
-
-        # print statistics
-        running_loss += loss.item()
-        if i % 2000 == 1999:    # print every 2000 mini-batches
-            print('[%d, %5d] loss: %.3f' %
-                  (epoch + 1, i + 1, running_loss / 2000))
-            running_loss = 0.0
-
-print('Finished Training')
+# Backward
+loss.backward()
+optimizer.step()
+```
+#### `view()`
+`numpy`의 [`reshape`](#reshape)과 비슷하다.
+```python
+feat_dim = 24 * 4 * 4 # == 384
+# x가 (128, 24, 4, 4)일 경우
+x.view(-1, feat_dim) # (128, 384)
+```
+## Assignment 8-2 Self-supervised learning: Contrastive Multiview Coding (CMC)
+### Building CMC Encoders
+- DoubleTensor인 x를 FloatTensor로 바꾸려면 `x.float()`
+- Don't forget to `encoder_forward_result.view(batch_size, -1)`
+#### CUDA, GPU, cpu related error
+Encoder는 cuda tensor, RGB2Lab는 cpu tensor를 input으로 받으므로 `x.cpu()` 와 `x.to(device)`로 오가자.
+#### Swaping axes of tensor in PyTorch
+dataloader는 channel을 dimension 1에 두는데, RGB2Lab는 dimension 3에 둔다. 그래서 필요에 따라 axes를 바꿔줘야 한다.
+```python
+# x가 (128, 3, 64, 64) 일 경우
+x.permute(0, 2, 3, 1) # (128, 64, 64, 3)
 ```

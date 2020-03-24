@@ -320,16 +320,16 @@ Estimated Total Size (MB): 0.54
 Source: [medium.com](https://medium.com/@vaibhaw.vipul/building-autoencoder-in-pytorch-34052d1d280c)
 ```python
 for epoch in range(num_epochs):
-	for data in dataloader:
-		img, _ = data
-		img = Variable(img).cpu()
-		# ===================forward=====================
-		output = model(img)
-		loss = distance(output, img)
-		# ===================backward====================
-		optimizer.zero_grad()
-		loss.backward()
-		optimizer.step()
-	# ===================log========================
-	print('epoch [{}/{}], loss:{:.4f}'.format(epoch+1, num_epochs, loss.data()))
+    for data in dataloader:
+        img, _ = data
+        img = Variable(img).cpu()
+        # ===================forward=====================
+        output = model(img)
+        loss = distance(output, img)
+        # ===================backward====================
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+    # ===================log========================
+    print('epoch [{}/{}], loss:{:.4f}'.format(epoch+1, num_epochs, loss.data()))
 ```

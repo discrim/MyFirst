@@ -54,6 +54,9 @@ This is a list of references which I looked up while doing assignments, and some
 	1. [Step 2: Build Generator and Discriminator](#step-2-build-generator-and-discriminator)
 	1. [`torch.cat`](#torchcat)
 1. [Assignment 7-2 Receptive Field](#assignemtn-7-2-receptive-field)
+1. [Assignment 8-1 Self-supervised learning: Autoencoders](#self-supervised-learning-autoencoders)
+	1. [Constructing autoencoder learning layers](#constructing-learning-layers)
+	1. [Training Autoencoders](#training-autoencoders)
 
 ## Colab
 ### Prevent Disconnecting
@@ -253,7 +256,7 @@ E.g.
 □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  □□□□□□□□  ■■■■□□□□  □□■■■■□□  □□□□■■■■  
 ```
 So the receptive field is `(3, 3)`.
-## Assignment 8
+## Assignment 8-1 Self-supervised learning: Autoencoders
 ### Constructing learning layers
 Below is an example.
 ```python
@@ -312,4 +315,21 @@ Forward/backward pass size (MB): 0.33
 Params size (MB): 0.16
 Estimated Total Size (MB): 0.54
 ----------------------------------------------------------------
+```
+### Training Autoencoder
+Source: [medium.com](https://medium.com/@vaibhaw.vipul/building-autoencoder-in-pytorch-34052d1d280c)
+```python
+for epoch in range(num_epochs):
+	for data in dataloader:
+		img, _ = data
+		img = Variable(img).cpu()
+		# ===================forward=====================
+		output = model(img)
+		loss = distance(output, img)
+		# ===================backward====================
+		optimizer.zero_grad()
+		loss.backward()
+		optimizer.step()
+	# ===================log========================
+	print('epoch [{}/{}], loss:{:.4f}'.format(epoch+1, num_epochs, loss.data()))
 ```

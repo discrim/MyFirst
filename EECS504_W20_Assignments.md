@@ -65,6 +65,7 @@ Late days used: 5(1), 7(1), 8(1)
 	1. [Building CMC Encoders](#building-cmc-encoders)
 		1. [CUDA, GPU, cpu related error](#cuda-gpu-cpu-related-error)
 		1. [Swaping axes of tensor in PyTorch](#swaping-axes-of-tensor-in-pytorch)
+1. [Assignment 10](#assignment-10)
 
 ## Colab
 ### Prevent Disconnecting
@@ -382,3 +383,5 @@ dataloader는 channel을 dimension 1에 두는데, RGB2Lab는 dimension 3에 둔
 # x가 (128, 3, 64, 64) 일 경우
 x.permute(0, 2, 3, 1) # (128, 64, 64, 3)
 ```
+## Assignment 10
+Lecture 20

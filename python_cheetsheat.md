@@ -1,7 +1,7 @@
 # Python Cheetsheat
 1. [Line Continuation](#line-continuation)
 1. [Class](#class)
-     1. [Basics](basics)
+     1. [Basics](#basics)
      1. [Constructor](#constructor)
      1. [Inheritance](#inheritance)
      1. [Method Overriding](#method-overriding)

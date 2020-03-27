@@ -1,4 +1,13 @@
 # Python Cheetsheat
+1. [Line Continuation](#line-continuation)
+1. [Class](#class)
+     1. [Basics](basics)
+     1. [Constructor](#constructor)
+     1. [Inheritance](#inheritance)
+     1. [Method Overriding](#method-overriding)
+     1. [Class Variable](#class-variable)
+     1. [`super()`](#super)
+1. [String Formatting (C언어의 format specifiers)](#string-formatting-c언어의-format-specifiers)
 ### Line Continuation
 Source: [Stackoverflow](https://stackoverflow.com/questions/53162/how-can-i-do-a-line-break-line-continuation-in-python)  
 Enclose with parantheses or add backslash.

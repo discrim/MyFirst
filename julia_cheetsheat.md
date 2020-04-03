@@ -82,5 +82,7 @@ str1 = string(greet, ", ", whom, ".\n")
 # Another way
 str2 = greet * ", " * whom * ".\n"
 ```
-### `mapslicec`
+### `mapslices`
 TODO. p6.31
+### Type of a value
+`typeof(x)`

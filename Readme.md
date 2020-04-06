@@ -1,19 +1,35 @@
 # Miscellaneous
+1. [Markdown test](#markdown-test)
+1. [Vim](#vim)
+  1. [How to make Vim python friendly (with minimum effort, minimum function)]
+1. [GPIO](#gpio)
+  1. [GPIO Zero Dependency](#gpio-zero-dependency)
+    1.[Why do I get PinFactoryFallback warnings when I import gpiozero?]
+1. [linux]
+  1. [실제 경로]
+1. [Excel](#excel)
+  1. [Make and Use Grid Template 엑셀 셀 정사각형 (그리드)로 만들고 템플릿으로 사용하기]
+1. [MinGW](#mingw)
+  1. [How to Install MinGW Development Environment](#how-to-install-mingw-development-environment)
+  1. [How to Uninstall MinGW](#how-to-uninstall-mingw)
 ## Markdown test
 `*Itallic*` -> *Itallic*  
 `**Bold**` -> **Bold**
-### How to make VIM python friendly (with minimum effort, minimum function)
+## Vim
+### How to make Vim python friendly (with minimum effort, minimum function)
 - Source: [Here](https://realpython.com/vim-and-python-a-match-made-in-heaven/)
 1. Install [Vundle](https://realpython.com/vim-and-python-a-match-made-in-heaven/#vundle), the VIM's pip.
 1. Install Plugins for [Syntax Checking/Highlighting](https://realpython.com/vim-and-python-a-match-made-in-heaven/#syntax-checkinghighlighting).
 1. Done!
 - Colorschemes? Do it on your own.
+## GPIO
 ### GPIO Zero Dependency
 #### Why do I get PinFactoryFallback warnings when I import gpiozero?
 - Source: [Here](https://gpiozero.readthedocs.io/en/stable/faq.html#why-do-i-get-pinfactoryfallback-warnings-when-i-import-gpiozero)  
 
 ` $ pip3 install rip.gpio `
-### Linux용 Windows 하위 시스템 / Windows Subsystem for Linux 's actual directory
+## Linux용 Windows 하위 시스템 / Windows Subsystem for Linux
+### 실제 경로 / Actual directory
 - Source: [Windows 10 - Ubuntu on Windows 10 서로간 파일 시스템 접근하기](https://snowdeer.github.io/windows/2018/01/07/windows10-ubuntu-file-directory/)  
 `C:\Users\<username>\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs`
 ## Excel
@@ -35,3 +51,28 @@ Source: [클리앙](https://www.clien.net/service/board/lecture/8390021), [Exten
 헤더 1/2와 A/B의 경계를 클릭하고 드래그하여 높이/너비를 조절. 눈대중과 픽셀표시를 모두 활용하여 A1 셀의 높이/너비가 정사각형과 맞도록 조절.
 1. Save as `.xltx` file to use it as a user template.  
 `.xltx` 형식으로 저장하여 사용자 템플릿으로 사용하기.
+## MinGW
+### How to Install MinGW Development Environment
+1. Download and install MinGW. You can google it or use the link below:  
+https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/  
+You can change the installation path if you want, but be sure to note it because we need the path itself at the later step.
+1. We just installed 'package manager', and now we need to install some packages. After the installation is complete, the `MinGW Installation Manager` pops up. From there, mark four things:  
+```
+mingw-developer-toolkit-bin
+mingw32-base-bin
+mingw32-gcc-g++-bin
+msys-base-bin
+```
+Be patient: it takes ~5 sec after you select a package and click 'Mark for Installation'.
+1. Go to the top left of the window and click `Installation -> Apply Changes`. Then the installation automatically starts. This will take a while. If something fails, just click `Installation -> Apply` Changes again.
+1. Go to system environmental variable setting, i.e. hit the Windows key on your keyboard and type 'environmental variable' then select 'System Environmental Variable' (it may differ since I don't exactly know the term in English Windows).
+1. Click `Environmental Variable` button.
+1. Under `System Variables`, find `Path`. Click it and click `Edit`.
+1. Double-click an empty new line and type in the path of your `bin` folder of MinGW. EX) If you installed MinGW in `C:\MinGW`, then `C:\MinGW\bin` should be written.
+1. One more to add; double-click an empty new line and type in the path of your `bin` folder of msys. EX) If you installed MinGW in `C:\MinGW`, then `C:\MinGW\msys\1.0\bin` should be written. The version of mine is 1.0 but it may differ, so please explore to your folders and write your version.
+1. Now you can use gcc, make, etc. in your cmd.
+### How to Uninstall MinGW
+Source: [YouTube](https://www.youtube.com/watch?v=WWSK8wYvs2w)
+1. In `MinGW Installation Manager`, uninstall every individual packages you have installed.
+1. Delete the folder that `MinGW` is installed.
+1. Remove `MinGW` related directories from `System Variables - Path`.

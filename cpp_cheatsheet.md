@@ -1,4 +1,4 @@
-# C++ Cheetsheat
+# C++ Cheatsheet
 1. [Dynamic Allocation 동적 할당, 동적 어레이](#dynamic-allocation-동적-할당-동적-어레이)
 	1. [Single Variable](#single-variable)
 	1. [Array](#array)

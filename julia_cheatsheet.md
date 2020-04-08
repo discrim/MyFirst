@@ -1,4 +1,4 @@
-# Julia Cheetsheat  
+# Julia Cheatsheet  
 Mostly needed for homeworks of F19 EECS 551 and W20 EECS 598-006.
 ### Iterate over a list/array/etc.
 #### 1D

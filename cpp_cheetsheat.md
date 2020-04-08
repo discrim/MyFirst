@@ -1,4 +1,13 @@
 # C++ Cheetsheat
+1. [Dynamic Allocation 동적 할당, 동적 어레이](#dynamic-allocation-동적-할당-동적-어레이)
+	1. [Single Variable](#single-variable)
+	1. [Array](#array)
+1. [Null Pointer](#null-pointer)
+1. [Random Number 난수 생성](#random-number-난수-생성)
+1. [Command Line Arguments Parsing](#command-line-arguments-parsing)
+	1. [Type Casting from String (Character Array) to Integer](#type-casting-from-string-character-array-to-integer)
+1. [`make` and makefile](#make-and-makefile)
+1. [Vector Iteration](#vector-iteration)
 ### Dynamic Allocation 동적 할당, 동적 어레이
 Source: [cplusplus.com](http://www.cplusplus.com/doc/tutorial/dynamic/)
 #### Single Variable
@@ -52,7 +61,7 @@ int main(int argc, char* argv[])
   return 0;
 }
 ```
-### make and makefile
+### `make` and makefile
 - Source: [make와 Makefile](https://bowbowbow.tistory.com/12)
 ### Vector Iteration
 Source: [여기](https://hyeonstorage.tistory.com/318)

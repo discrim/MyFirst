@@ -1,4 +1,4 @@
-# Python Cheetsheat
+# Python Cheatsheet
 1. [Line Continuation](#line-continuation)
 1. [Class](#class)
      1. [Basics](#basics)

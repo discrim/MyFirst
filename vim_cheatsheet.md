@@ -1,4 +1,8 @@
-# Vim Cheetsheat
+# Vim Cheatsheet
+1. [Initial `~/.vimrc` Setting](#initial-vimrc-setting)
+1. [Insert Actual Tab](#insert-actual-tab)
+1. [Command Mode Commands (Case-Sensitive)](#command-mode-commands-case-sensitive)
+1. [#tab-multiple-lines](Tab Multiple Lines)
 ### Initial ~/.vimrc Setting
 ```vim
 set nu

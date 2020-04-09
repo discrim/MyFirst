@@ -8,6 +8,8 @@
      1. [Class Variable](#class-variable)
      1. [`super()`](#super)
 1. [String Formatting (C언어의 format specifiers)](#string-formatting-c언어의-format-specifiers)
+1. [`pip`](#pip)
+	1. [Downgrade Package](#downgrade-package)
 ### Line Continuation
 Source: [Stackoverflow](https://stackoverflow.com/questions/53162/how-can-i-do-a-line-break-line-continuation-in-python)  
 Enclose with parantheses or add backslash.
@@ -268,3 +270,13 @@ String: Hello, Integer: 13, Floating Point Number: 5.39
 String: Hello, Integer: 13, Floating Point Number: 5.39
 >>>
 ```
+### `pip`
+#### Downgrade Package
+1. Uninstall the higher version.
+2. Install while specifying a desired version.
+e.g.
+```
+pip3 uninstall numpy <- Uninstall numpy 1.18.2
+pip3 install numpy==1.16.1
+```
+Solution to my incident on 2020-04-09 while doing EECS 504 final project (Ref: [StackOverflow](https://stackoverflow.com/questions/55890813/how-to-fix-object-arrays-cannot-be-loaded-when-allow-pickle-false-for-imdb-loa))

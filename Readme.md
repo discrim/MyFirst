@@ -5,8 +5,6 @@
 1. [GPIO](#gpio)
 	1. [GPIO Zero Dependency](#gpio-zero-dependency)
 		1. [Why do I get PinFactoryFallback warnings when I import gpiozero?](#why-do-i-get-pinfactoryfallback-warnings-when-i-import-gpiozero)
-1. [Linux용 Windows 하위 시스템 / Windows Subsystem for Linux](#linux용-windows-하위-시스템--windows-subsystem-for-linux)
-	1. [실제 경로 / Actual directory](#실제-경로--actual-directory)
 1. [Excel](#excel)
 	1. [Make and Use Grid Template 엑셀 셀 정사각형 (그리드)로 만들고 템플릿으로 사용하기](#make-and-use-grid-template-엑셀-셀-정사각형-그리드로-만들고-템플릿으로-사용하기)
 1. [MinGW](#mingw)

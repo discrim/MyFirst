@@ -26,10 +26,6 @@
 - Source: [Here](https://gpiozero.readthedocs.io/en/stable/faq.html#why-do-i-get-pinfactoryfallback-warnings-when-i-import-gpiozero)  
 
 ` $ pip3 install rip.gpio `
-## Linux용 Windows 하위 시스템 / Windows Subsystem for Linux
-### 실제 경로 / Actual directory
-- Source: [Windows 10 - Ubuntu on Windows 10 서로간 파일 시스템 접근하기](https://snowdeer.github.io/windows/2018/01/07/windows10-ubuntu-file-directory/)  
-`C:\Users\<username>\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs`
 ## Excel
 ### Make and Use Grid Template 엑셀 셀 정사각형 (그리드)로 만들고 템플릿으로 사용하기
 Source: [클리앙](https://www.clien.net/service/board/lecture/8390021), [ExtendOffice](https://www.extendoffice.com/documents/excel/2419-excel-grid)

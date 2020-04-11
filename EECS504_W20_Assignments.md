@@ -227,7 +227,7 @@ Ref: https://pytorch.org/docs/stable/optim.html
 ### Step 2: Build Generator and Discriminator
 - Ref: https://github.com/znxlwm/pytorch-CycleGAN/blob/master/network.py
 ### `torch.cat`
-- Source: [PyTorch](https://pytorch.org/docs/stable/torch.html)
+- Source: [PyTorch](https://pytorch.org/docs/stable/torch.html#torch.cat)
 ```python
 >>> x = torch.randn(2, 3)
 >>> x

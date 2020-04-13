@@ -6,6 +6,7 @@ Late days used: 5(1), 7(1), 8(1)
     1. [Prevent Disconnecting](#prevent-disconnecting)
     1. [Clear Output Every 30 mins](#clear-output-every-30-mins)
     1. [Use Data from Google Drive](#use-data-from-google-drive)
+    1. [`tqdm_notebook`](#tqdm_notebook)
 1. [Assignment 1](#assignment-1)
 1. [Assignment 2](#assignment-2)
 1. [Assignment 3-1 Motion Magnifying](#assignment-3-1-motion-magnifying)
@@ -99,6 +100,18 @@ setInterval(CleanCurrentOutput,1000*60*30);
 ### Use Data from Google Drive
 Source: [테디노트](https://teddylee777.github.io/machine-learning/Google-colab%EC%9C%BC%EB%A1%9C-GPU-%EB%B6%80%EC%8A%A4%ED%8A%B8%EB%B0%9B%EC%95%84-machine-learning-%ED%95%99%EC%8A%B5%ED%95%98%EA%B8%B0)
 - 파일 이름이 숫자로 시작하면 오류남. Error occurs with file names starting with numbers.
+### `tqdm_notebook`
+```python
+# In non-notebook editor
+from tqdm import tqdm
+for ii in tqdm(range(int(1000))):
+	pass
+
+# In notebook
+from tqdm import tqdm_notebook
+for ii in tqdm_notebook(range(int(1000))):
+	pass
+```
 ## Assignment 1
 ## Assignment 2
 ## Assignment 3-1 Motion Magnifying

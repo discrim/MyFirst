@@ -7,6 +7,7 @@ Late days used: 5(1), 7(1), 8(1)
     1. [Clear Output Every 30 mins](#clear-output-every-30-mins)
     1. [Use Data from Google Drive](#use-data-from-google-drive)
     1. [`tqdm_notebook`](#tqdm_notebook)
+    1. [GPU Check](#gpu-check)
 1. [Assignment 1](#assignment-1)
 1. [Assignment 2](#assignment-2)
 1. [Assignment 3-1 Motion Magnifying](#assignment-3-1-motion-magnifying)
@@ -111,6 +112,10 @@ for ii in tqdm(range(int(1000))):
 from tqdm import tqdm_notebook
 for ii in tqdm_notebook(range(int(1000))):
 	pass
+```
+### GPU Check
+```
+!nvidia-smi
 ```
 ## Assignment 1
 ## Assignment 2

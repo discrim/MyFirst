@@ -67,6 +67,9 @@ Late days used: 5(1), 7(1), 8(1)
 	1. [Building CMC Encoders](#building-cmc-encoders)
 		1. [CUDA, GPU, cpu related error](#cuda-gpu-cpu-related-error)
 		1. [Swaping axes of tensor in PyTorch](#swaping-axes-of-tensor-in-pytorch)
+1. [Assignment 9](#assignment-9)
+	1. [`def get_orb_features`](#def-get_orb_features)
+	1. [`def match_keypoints`](#def-match_keypoints)
 1. [Assignment 10](#assignment-10)
 
 ## Colab
@@ -401,5 +404,10 @@ dataloader는 channel을 dimension 1에 두는데, RGB2Lab는 dimension 3에 둔
 # x가 (128, 3, 64, 64) 일 경우
 x.permute(0, 2, 3, 1) # (128, 64, 64, 3)
 ```
+## Assignment 9
+### `def get_orb_features`
+Ref: [OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_orb/py_orb.html)
+### `def match_keypoints`
+Ref: [OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_matcher/py_matcher.html)
 ## Assignment 10
 Lecture 20

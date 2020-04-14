@@ -71,6 +71,8 @@ Late days used: 5(1), 7(1), 8(1)
 	1. [`def get_orb_features`](#def-get_orb_features)
 	1. [`def match_keypoints`](#def-match_keypoints)
 1. [Assignment 10](#assignment-10)
+1. [Project](#project)
+	1. [Training time per epoch](#training-time-per-epoch)
 
 ## Colab
 ### Prevent Disconnecting
@@ -411,3 +413,14 @@ Ref: [OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutoria
 Ref: [OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_matcher/py_matcher.html)
 ## Assignment 10
 Lecture 20
+## Project
+### Training time per epoch
+About 9 min 30 sec if
+* `preprocess.py` was run only with the following 20 `person_id` (~2GB):
+```
+id00017	id00061	id00081	id00154	id00419
+id00562	id00812	id00817	id00866	id00926
+id01000	id01041	id01066	id01106	id01224
+id01228	id01298	id01333	id01437	id01460
+id01509	id01541	id01567	id01593	id01618
+```

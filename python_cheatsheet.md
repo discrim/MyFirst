@@ -1,15 +1,21 @@
 # Python Cheatsheet
-1. [Line Continuation](#line-continuation)
-1. [Class](#class)
-     1. [Basics](#basics)
-     1. [Constructor](#constructor)
-     1. [Inheritance](#inheritance)
-     1. [Method Overriding](#method-overriding)
-     1. [Class Variable](#class-variable)
-     1. [`super()`](#super)
-1. [String Formatting (C언어의 format specifiers)](#string-formatting-c언어의-format-specifiers)
+1. [Pure Python](#pure-python)
+	1. [Line Continuation](#line-continuation)
+	1. [Class](#class)
+	     1. [Basics](#basics)
+	     1. [Constructor](#constructor)
+	     1. [Inheritance](#inheritance)
+	     1. [Method Overriding](#method-overriding)
+	     1. [Class Variable](#class-variable)
+	     1. [`super()`](#super)
+	1. [String Formatting (C언어의 format specifiers)](#string-formatting-c언어의-format-specifiers)
+	1. [Count in List with Conditions](#count-in-list-with-conditions)
 1. [`pip`](#pip)
 	1. [Downgrade Package](#downgrade-package)
+1. [`numpy`](#numpy)
+	1. [Array Basics](#array-basics)
+	1. [Random Number](#random-number)
+## Pure Python
 ### Line Continuation
 Source: [Stackoverflow](https://stackoverflow.com/questions/53162/how-can-i-do-a-line-break-line-continuation-in-python)  
 Enclose with parantheses or add backslash.
@@ -270,8 +276,11 @@ String: Hello, Integer: 13, Floating Point Number: 5.39
 String: Hello, Integer: 13, Floating Point Number: 5.39
 >>>
 ```
-### `pip`
-#### Downgrade Package
+### Count in List with Conditions
+Source: [GeeksforGeeks](https://www.geeksforgeeks.org/python-count-of-elements-matching-particular-condition/)  
+`count = sumn(1 for elem in mylist if elem > 5)`
+## `pip`
+### Downgrade Package
 1. Uninstall the higher version.
 2. Install while specifying a desired version.
 e.g.
@@ -280,3 +289,18 @@ pip3 uninstall numpy <- Uninstall numpy 1.18.2
 pip3 install numpy==1.16.1
 ```
 Solution to my incident on 2020-04-09 while doing EECS 504 final project (Ref: [StackOverflow](https://stackoverflow.com/questions/55890813/how-to-fix-object-arrays-cannot-be-loaded-when-allow-pickle-false-for-imdb-loa))
+## `numpy`
+Assume `import numpy as np`.
+[https://numpy.org/doc/stable/genindex.html](https://numpy.org/doc/stable/genindex.html)
+### Array Basics
+* Make an array: `x = np.array([[1, 2], [3, 4]])`
+* [numpy.append](https://numpy.org/doc/stable/reference/generated/numpy.append.html#numpy.append): `z = np.append(x, y, axis=0)`
+* [numpy.transpose](https://numpy.org/doc/stable/reference/generated/numpy.transpose.html#numpy.transpose): `y = x.T`. For complicated transpose (3D axis swap, axis change), see the reference.
+* [numpy.delete](https://numpy.org/doc/stable/reference/generated/numpy.delete.html#numpy.delete): `y = np.delete(x, obj=2, axis=1)` to delete x's 2nd index of 1st axis (which is 3rd column).
+### Random Number
+Source: [numpy](https://numpy.org/doc/stable/reference/random/legacy.html#simple-random-data)  
+Make an array of 2-row, 3-col ...
+* numbers between `\[0, 1)` from uniform distributtion: `x = np.random.rand(2, 3)`
+* numbers from standard normal distribution: `x = np.random.randn(2, 3)`
+* integers with some parameters: `x = np.random.randint(low=4, high=17, size=(2, 3))`
+(`[low, high)`. `high`, `size` are optional)

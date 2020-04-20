@@ -1,5 +1,6 @@
 # Miscellaneous
-1. [Markdown test](#markdown-test)
+1. [GitHub Markdown](#github-markdown)
+	1. [Insert LaTeX formula in GitHub Markdown](#insert-latex-formula-in-github-markdown)
 1. [Vim](#vim)
 	1. [How to make Vim python friendly (with minimum effort, minimum function)](#how-to-make-vim-python-friendly-with-minimum-effort-minimum-function)
 1. [GPIO](#gpio)
@@ -10,9 +11,13 @@
 1. [MinGW](#mingw)
 	1. [How to Install MinGW Development Environment](#how-to-install-mingw-development-environment)
 	1. [How to Uninstall MinGW](#how-to-uninstall-mingw)
-## Markdown test
+## GitHub Markdown
 `*Itallic*` -> *Itallic*  
 `**Bold**` -> **Bold**
+### Insert LaTeX formula in GitHub Markdown
+Source: [#GitHub Gist](https://gist.github.com/a-rodin/fef3f543412d6e1ec5b6cf55bf197d7b)  
+`<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">`  
+Also use https://alexanderrodin.com/github-latex-markdown/ to generate the URL-friendly formula.
 ## Vim
 ### How to make Vim python friendly (with minimum effort, minimum function)
 - Source: [Here](https://realpython.com/vim-and-python-a-match-made-in-heaven/)

@@ -70,6 +70,7 @@ Late days used: 5(1), 7(1), 8(1)
 1. [Assignment 9: Panoramic Stitching](#assignment-9-panoramic-stitching)
 	1. [Compute ORB features](#compute-orb-features)
 	1. [Match_keypoints](#match-keypoints)
+	1. [Find homography matrix](#find-homography-matrix)
 1. [Assignment 10](#assignment-10)
 1. [Project](#project)
 	1. [Training time per epoch](#training-time-per-epoch)
@@ -415,6 +416,27 @@ Ref: [Program Creek](https://www.programcreek.com/python/example/89393/cv2.ORB_c
 Implement `def match_keypoints`.
 Ref: [OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_matcher/py_matcher.html), [Program Creek](https://www.programcreek.com/python/example/89444/cv2.drawMatches).  
 But `cv2.drawMatches` raises error in my case, so I used `cv2.drawMatchesKnn`.
+### Find homography matrix
+Ref: Lecture Note 8-22, [StackExchange (math part)](https://math.stackexchange.com/questions/494238/how-to-compute-homography-matrix-h-from-corresponding-points-2d-2d-planar-homog), [numpy.linalg.lstsq (code part)](https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html#numpy.linalg.lstsq)  
+Source: [Berkeley](https://inst.eecs.berkeley.edu/~cs194-26/fa17/upload/files/proj6B/cs194-26-adi/main.py) (Googled 'def find_homography(pts_1, pts_2)')  
+To solve ![a, b, c, d, e, f, g, h](https://render.githubusercontent.com/render/math?math=a%2C%20b%2C%20c%2C%20d%2C%20e%2C%20f%2C%20g%2C%20h) given ![x_1, y_1, x_2, y_2](https://render.githubusercontent.com/render/math?math=x_1%2C%20y_1%2C%20x_2%2C%20y_2),  
+![\begin{bmatrix} x_2 \\ y_2 \\ 1 \end{bmatrix}=](https://render.githubusercontent.com/render/math?math=%5Cbegin%7Bbmatrix%7D%20x_2%20%5C%5C%20y_2%20%5C%5C%201%20%5Cend%7Bbmatrix%7D%3D)
+![\begin{bmatrix} a & b & c \\ d & e & f \\ g & h & 1 \end{bmatrix}](https://render.githubusercontent.com/render/math?math=%5Cbegin%7Bbmatrix%7D%20a%20%26%20b%20%26%20c%20%5C%5C%20d%20%26%20e%20%26%20f%20%5C%5C%20g%20%26%20h%20%26%201%20%5Cend%7Bbmatrix%7D)
+![\begin{bmatrix} x_1 \\ y_1 \\ 1 \end{bmatrix}](https://render.githubusercontent.com/render/math?math=%5Cbegin%7Bbmatrix%7D%20x_1%20%5C%5C%20y_1%20%5C%5C%201%20%5Cend%7Bbmatrix%7D)
+Manipulating this matrix equation, we get ![Ax=y](https://render.githubusercontent.com/render/math?math=Ax%3Dy) form of below:  
+![\begin{bmatrix} -x_1 & -y_1 & -1 & 0 & 0 & 0 & x_1x_2 & y_1x_2 \\ 0 & 0 & 0 & -x_1 & -y_1 & -1 & x_1y_2 & y_1y_2 \end{bmatrix}](https://render.githubusercontent.com/render/math?math=%5Cbegin%7Bbmatrix%7D%20-x_1%20%26%20-y_1%20%26%20-1%20%26%200%20%26%200%20%26%200%20%26%20x_1x_2%20%26%20y_1x_2%20%5C%5C%200%20%26%200%20%26%200%20%26%20-x_1%20%26%20-y_1%20%26%20-1%20%26%20x_1y_2%20%26%20y_1y_2%20%5Cend%7Bbmatrix%7D)
+![\begin{bmatrix} a \\ b \\ c \\ d \\ e \\ f \\ g \\ h \end{bmatrix}](https://render.githubusercontent.com/render/math?math=%5Cbegin%7Bbmatrix%7D%20a%20%5C%5C%20b%20%5C%5C%20c%20%5C%5C%20d%20%5C%5C%20e%20%5C%5C%20f%20%5C%5C%20g%20%5C%5C%20h%20%5Cend%7Bbmatrix%7D)
+![=\begin{bmatrix} x_2 \\ y_2 \end{bmatrix}](https://render.githubusercontent.com/render/math?math=%3D%5Cbegin%7Bbmatrix%7D%20x_2%20%5C%5C%20y_2%20%5Cend%7Bbmatrix%7D)
+The A and b above are vertically stackable so append them vertifcally. Then  
+```python
+h = np.linalg.lstsq(A, b, rcond=None)[0]
+H = []
+	for element in h:
+		H.append(element[0])
+	H.append(1)
+	H = np.array(H).reshape((3, 3))
+```
+###
 ## Assignment 10
 Lecture 20
 ## Project

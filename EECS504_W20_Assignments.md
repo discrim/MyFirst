@@ -72,6 +72,9 @@ Late days used: 5(1), 7(1), 8(1)
 	1. [Match_keypoints](#match-keypoints)
 	1. [Find homography matrix](#find-homography-matrix)
 1. [Assignment 10](#assignment-10)
+	1. [`cv2.getGaussianKernel`](#cv2getgaussiankernel)
+	1. [`get_derivative`](#get_derivative)
+		1. [`numpy.divide`](#numpydivide)
 1. [Project](#project)
 	1. [Training time per epoch](#training-time-per-epoch)
 
@@ -439,6 +442,48 @@ H = []
 ###
 ## Assignment 10
 Lecture 20
+### `cv2.getGaussianKernel`
+Source: [OpenCV](https://docs.opencv.org/2.4/modules/imgproc/doc/filtering.html#getgaussiankernel)  
+Used for gaussing blurring function in skeleton code. Returns Gaussian filter cofficients, i.e. 1D filter.  
+`cv2.getGaussianKernel(ksize, sigma[, ktype])`
+### `get_derivative`
+Used to construct a row vector (1D, or you might say 'fake 2D') gradient filter  `[[1, -8, 0, 8, -1]] / 12` (and its transposed version, the column vector)
+```python
+grad_filter_x = np.divide(np.array([[1, -8, 0, 8, 1]]), 12)
+```
+To take derivative, use `scipy.signal.correlate2d(in1, in2, mode='full', boundary='fill', fillvalue=0)`
+1. with a changed parameter: `mode='same'` to keep the output size same as the original image size
+1. to a single channel: use `img[:,:,one_color_channel]` not `img`. If not, `ValueError: correlate2d inputs must both be 2D arrays` is raised because RGB image is 3D.
+```python
+from scipy import signal
+for chan in range(3):
+	Ix[:, :, chan] = signal.correlate2d(I2_blurred[:, :, dim], grad_filter_x, mode='same')
+	Iy[:, :, chan] = signal.correlate2d(I2_blurred[:, :, dim], grad_filter_y, mode='same')
+	It[:, :, chan] = signal.correlate2d(It_blurred[:, :, dim], grad_filter_t, mode='same')	# It = later_image - earlier_image
+```
+Now, as the lecture note, construct the following elements of matrix:  
+`Ixx: sum Ix*Ix`, `Iyy: sum Iy*Iy`, `Ixy: sum Ix*Iy`, `Ixt: sum Ix*It`, `Iyt: sum Iy*It`  
+for a solution of the system:  
+`[[Ixx, Ixy], [Ixy, Iyy]] * [[u], [v]] = -[[Ixt], [Iyt]]`  
+(`u`, `v` are the displacement of x- and y- direction between the later and earlier images.)  
+```python
+Ixx = Ix ** 2
+Ixy = np.multiply(Ix, Iy)
+# Same principle applies to Iyy, Ixt, and Iyt.
+```
+Use `**` for element-wise square and `np.multiply(arr1, arr2)` for element-wise multiplication.  
+Finally, average the five `I__`s over RGB channel (the 3rd dimension) using `numpy.mean`:
+```python
+Ixx = np.mean(Ixx, axis=2)
+# Same principle applies to the other four 'I__'s.
+```
+#### `numpy.divide`
+Source: [NumPy](https://numpy.org/doc/stable/reference/generated/numpy.divide.html)  
+Returns a true division (not quotient and remainder, but the best answer), element-wise between two array/vector or dividing array/vector by scalar (broadcast).  
+```python
+np.divide([1, 2, 3, 5], [7, 4, 5, 2])	# array([0.1429, 0.5, 0.6, 0.25]). Element-wise.
+np.divide([1, 2, 3, 5], 3)		# array([0.3333, 0.6667, 1., 1.6667]). Broadcast.
+```
 ## Project
 ### Training time per epoch
 About 9 min 30 sec if

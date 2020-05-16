@@ -334,7 +334,7 @@ pip install pyyaml
 # yaml_test.py
 import yaml
 file = open('JohnD.yaml')
-dict_from_yaml = yaml.safe_load(file)	# Extract and convert data from yaml into dictionary type
+dict_from_yaml = yaml.safe_load(file)	# Extract and convert data from YAML file into dictionary type
 print(dict_from_yaml)
 ```
 ```

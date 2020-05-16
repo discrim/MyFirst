@@ -323,7 +323,7 @@ education:
     - name: DEF University
     - GPA: 3.78
 ```
-and save it as `JohnD.yaml` (not `JohnD.txt`). Then you just made a data in `YAML` type.
+and save it as `JohnD.yaml` (not `JohnD.txt`). Then you just stored the data in `YAML` type.
 ### How to use `YAML` file in Python? - Basics
 1. Install `PyYAML`
 ```

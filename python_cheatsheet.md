@@ -318,10 +318,10 @@ age: 33
 education:
   - highschool:
     - name: ABC High
-    - GPA: 3.45
-  - college:
+      GPA: 3.45
+    college:
     - name: DEF University
-    - GPA: 3.78
+      GPA: 3.78
 ```
 and save it as `JohnD.yaml` (not `JohnD.txt`). Then you just stored the data in `YAML` type.
 ### How to use `YAML` file in Python? - Basics
@@ -341,6 +341,6 @@ Put `JohnD.yaml` (of the previous section) in the folder where `yaml_test.py` ex
 Run `yaml_test.py`. The output is as follows:
 ```
 {'firstname': 'John', 'lastname': 'Doe', 'age': 33, 'education':
-[{'highschool': [{'name': 'ABC High'}, {'GPA': 3.45}]},
-{'college': [{'name': 'DEF University'}, {'GPA': 3.78}]}]}
+[{'highschool': [{'name': 'ABC High', 'GPA': 3.45}],
+'college': [{'name': 'DEF University', 'GPA': 3.78}]}]}
 ```

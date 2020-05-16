@@ -337,8 +337,9 @@ file = open('JohnD.yaml')
 dict_from_yaml = yaml.safe_load(file)	# Extract and convert data from YAML file into dictionary type
 print(dict_from_yaml)
 ```
+Put `JohnD.yaml` (of the previous section) in the folder where `yaml_test.py` exists.  
+Run `yaml_test.py`. The output is as follows:
 ```
-# Output
 {'firstname': 'John', 'lastname': 'Doe', 'age': 33, 'education':
 [{'highschool': [{'name': 'ABC High'}, {'GPA': 3.45}]},
 {'college': [{'name': 'DEF University'}, {'GPA': 3.78}]}]}

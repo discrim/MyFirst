@@ -15,6 +15,9 @@
 1. [`numpy`](#numpy)
 	1. [Array Basics](#array-basics)
 	1. [Random Number](#random-number)
+1. [`PyYAML`](#pyyaml)
+	1. [What is `YAML`? - Crash Course](#what-is-yaml---crash-course)
+	1. [How to use `YAML` file in Python? - Basics](#how-to-use-yaml-file-in-python---basics)
 ## Pure Python
 ### Line Continuation
 Source: [Stackoverflow](https://stackoverflow.com/questions/53162/how-can-i-do-a-line-break-line-continuation-in-python)  
@@ -304,3 +307,39 @@ Make an array of 2-row, 3-col ...
 * numbers from standard normal distribution: `x = np.random.randn(2, 3)`
 * integers with some parameters: `x = np.random.randint(low=4, high=17, size=(2, 3))`
 (`[low, high)`. `high`, `size` are optional)
+## `PyYAML`
+### What is `YAML`? - Crash Course
+A type of file that stores data in a certain structure.  
+E.g. Assume you open notepad and write the following:
+```yaml
+firstname: John
+lastname: Doe
+age: 33
+education:
+  - highschool:
+    - name: ABC High
+    - GPA: 3.45
+  - college:
+    - name: DEF University
+    - GPA: 3.78
+```
+and save it as `JohnD.yaml` (not `JohnD.txt`). Then you just made a data in `YAML` type.
+### How to use `YAML` file in Python? - Basics
+1. Install `PyYAML`
+```
+pip install pyyaml
+```
+2. See the example below.
+```python
+# yaml_test.py
+import yaml
+file = open('JohnD.yaml')
+dict_from_yaml = yaml.safe_load(file)	# Extract and convert data from yaml into dictionary type
+print(dict_from_yaml)
+```
+```
+# Output
+{'firstname': 'John', 'lastname': 'Doe', 'age': 33, 'education':
+[{'highschool': [{'name': 'ABC High'}, {'GPA': 3.45}]},
+{'college': [{'name': 'DEF University'}, {'GPA': 3.78}]}]}
+```

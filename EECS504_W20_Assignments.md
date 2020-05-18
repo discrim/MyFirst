@@ -420,7 +420,7 @@ Implement `def match_keypoints`.
 Ref: [OpenCV](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_matcher/py_matcher.html), [Program Creek](https://www.programcreek.com/python/example/89444/cv2.drawMatches).  
 But `cv2.drawMatches` raises error in my case, so I used `cv2.drawMatchesKnn`.
 ### Find homography matrix
-Ref: Lecture Note 8-22, [StackExchange (math part)](https://math.stackexchange.com/questions/494238/how-to-compute-homography-matrix-h-from-corresponding-points-2d-2d-planar-homog), [numpy.linalg.lstsq (code part)](https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html#numpy.linalg.lstsq)  
+Ref: Lecture Note 18-22, [StackExchange (math part)](https://math.stackexchange.com/questions/494238/how-to-compute-homography-matrix-h-from-corresponding-points-2d-2d-planar-homog), [numpy.linalg.lstsq (code part)](https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html#numpy.linalg.lstsq)  
 Source: [Berkeley](https://inst.eecs.berkeley.edu/~cs194-26/fa17/upload/files/proj6B/cs194-26-adi/main.py) (Googled 'def find_homography(pts_1, pts_2)')  
 To solve ![a, b, c, d, e, f, g, h](https://render.githubusercontent.com/render/math?math=a%2C%20b%2C%20c%2C%20d%2C%20e%2C%20f%2C%20g%2C%20h) given ![x_1, y_1, x_2, y_2](https://render.githubusercontent.com/render/math?math=x_1%2C%20y_1%2C%20x_2%2C%20y_2),  
 ![\begin{bmatrix} x_2 \\ y_2 \\ 1 \end{bmatrix}=](https://render.githubusercontent.com/render/math?math=%5Cbegin%7Bbmatrix%7D%20x_2%20%5C%5C%20y_2%20%5C%5C%201%20%5Cend%7Bbmatrix%7D%3D)

@@ -223,6 +223,49 @@ id(b.lastname):  59794464
 ```
 #### `super()`
 Source: [Tistory](https://rednooby.tistory.com/56), [#ashcode](https://hashcode.co.kr/questions/6419/python3-super%EC%99%80-supera-self%EC%9D%98-%EC%B0%A8%EC%9D%B4%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94)  
+어떤 자식 클래스에서 `mymethod()`를 재정의했다고 가정하자.  
+(즉 부모 클래스에 `mymethod()`가 있고, 자식 클래스에도 `mymethod()`가 있는데 부모것과 동작이 다르다)  
+이 때, 자식 클래스 안에서 부모 클래스의 `mymethod()`를 사용하려면 `super().mymethod()`를 사용하고, 자식 클래스의 `mymethod()`를 사용하려면 `self.mymethod()`를 사용한다.  
+Example:
+```python
+class Parent():    
+    def sing_once( self ):
+        print("LOUD VOICE !")
+
+class Child( Parent ):
+    def sing_once( self ):
+        print("quite voice ~")
+    
+    def sing_twice( self ):
+        # Want to call both Parent's sing_once and Child's sing_once
+        self.sing_once()
+        super().sing_once()
+        
+if __name__ == "__main__":
+    p1 = Parent()
+    c1 = Child()
+    
+    print("p1.sing_once(): ")
+    p1.sing_once()
+    
+    print("\nc1.sing_once(): ")
+    c1.sing_once()
+    
+    print("\nc1.sing_twice(): ")
+    c1.sing_twice()
+```
+```
+p1.sing_once(): 
+LOUD VOICE !
+
+c1.sing_once(): 
+quite voice ~
+
+c1.sing_twice(): 
+quite voice ~
+LOUD VOICE !
+>>>
+```
 자식 클래스가 부모 클래스의 메소드를 사용하려면 How to let a child class use its parent's method
 1. 부모 클래스의 함수를 재정의하지 않는다. Don't redefine the parent's method.
 ```python

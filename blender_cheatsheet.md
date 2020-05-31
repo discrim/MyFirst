@@ -6,6 +6,7 @@
 	1. [All Objects](#all-objects)
 	1. [Select, Active](#select-active)
 1. [Track](#track)
+1. [Render](#render)
 
 ## Misc
 ### Python Tooltips / Python References
@@ -31,4 +32,13 @@ bpy.context.view_layer.objects.active = obj # Activate obj. Light orange border 
 ```python
 bpy.ops.object.track_set(type='TRACKTO')  # Selected object(s) track(s) one active object.
 bps.ops.object.track_clear(type='CLEAR')  # Remove tracking relationsthip.
+```
+### Render
+```python
+# Full path including filename, excluding extension.
+bpy.data.scenes["Scene"].render.filepath = "D:/Pictures/Blender_Renderings/image1"
+# Shows the parameters of rendering. You can render animation, still image, etc.
+print(bpy.ops.render.render)
+# Saves still image (= screenshot = screen capture) from the camera view
+bpy.ops.render.render(write_still=True)
 ```

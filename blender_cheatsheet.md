@@ -9,6 +9,19 @@
 1. [Render](#render)
 
 ## Misc
+### Install Packages Using `pip`
+1. Locate the directory of Blender's Python. E.g. `D:\Program Files\Blender Foundation\Blender 2.82\2.82\python`
+1. Run terminal. (cmd, PowerShell, etc.) You may need to run it as administrator.
+1. Go to the directory's binary folder.
+	```
+	C:\WINDOWS\system32> D:
+	D:\> cd "D:\Program Files\Blender Foundation\Blender 2.82\2.82\python\bin"
+	D:\Tools\Blender Foundation\Blender 2.82\2.82\python\bin>
+	```
+1. Use `pip` as a normal Python.
+	```
+	D:\Tools\Blender Foundation\Blender 2.82\2.82\python\bin> .\python.exe -m pip install scipy
+	```
 ### Python Tooltips / Python References
 Many buttons, drop-down menus, or anything that is clickable shows a tip when you hover your mouse.  
 If you want to see Python code, reference, tooltips when hovering any menus:

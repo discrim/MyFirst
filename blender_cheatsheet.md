@@ -2,6 +2,7 @@
 1. [Misc](#misc)
 	1. [Python Tooltips / Python References](#python-tooltips--python-references)
 	1. [List All Objects](#list-all-objects)
+	1. [Install Packages Using `pip`](#install-packages-using-pip)
 1. [Select Related](#select-related)
 	1. [All Objects](#all-objects)
 	1. [Select, Active](#select-active)

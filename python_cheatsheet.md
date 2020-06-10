@@ -10,6 +10,7 @@
 	     1. [`super()`](#super)
 	1. [String Formatting (C언어의 format specifiers)](#string-formatting-c언어의-format-specifiers)
 	1. [Count in List with Conditions](#count-in-list-with-conditions)
+	1. [Decorator](#decorator)
 1. [`pip`](#pip)
 	1. [Downgrade Package](#downgrade-package)
 1. [`numpy`](#numpy)
@@ -325,6 +326,79 @@ String: Hello, Integer: 13, Floating Point Number: 5.39
 ### Count in List with Conditions
 Source: [GeeksforGeeks](https://www.geeksforgeeks.org/python-count-of-elements-matching-particular-condition/)  
 `count = sumn(1 for elem in mylist if elem > 5)`
+### Decorator
+Ref: [제대로 파이썬](https://wikidocs.net/23106)  
+Imagine function `giftbox()` takes a function `gift()` as a parameter, and the desired output is as below:
+```
+Here is your gift. # Output from giftbox()
+It's iPad!         # Output from gift()
+Congratulations~   # Output from giftbox()
+```
+The code can be:
+```python
+def giftbox(func):
+    def inside(*args, **kwargs):
+        print("Here is your gift.")
+        func(*args, **kwargs)
+        print("Congratulations~")
+    return inside
+
+def gift(gift_name):
+    return "It's " + gift_name
+
+mygift = giftbox(gift) # Similar to h(x) = f(g(x)) in math
+mygift("iPad")         # Similar to h("iPad")
+```
+However, it is cumbersome to manually decorate your `gift()` with `giftbox()` as `mygift = giftbox(gift)`. In this case, you can use Python's `decorator`.
+```python
+def giftbox(func):
+    def inside(*args, **kwargs):
+        print("Here is your gift.")
+        func(*args, **kwargs)
+        print("Congratulations~")
+    return inside
+
+@giftbox
+def gift(gift_name):
+    return "It's " + gift_name
+
+mygift = gift
+mygift("iPad")
+```
+By putting `@giftbox` right above the definition of your `gift()`, your `gift()` is automatically 'decorated' with `giftbox()`. The same can be applied to a function who has a return value.
+```python
+# Without decorator
+def function_usage_notifier(func):
+    def inner(*args, **kwargs):
+        print("A function begins.")
+        result = func(*args, **kwargs)
+        print("A function ends.")
+        return result
+    return inner
+
+def power_self(nn):
+    return nn ** nn
+
+myfunc = function_usage_notifier(power_self)
+print(myfunc(7))
+```
+```python
+# With decorator
+def function_usage_notifier(func):
+    def inner(*args, **kwargs):
+        print("A function begins.")
+        result = func(*args, **kwargs)
+        print("A function ends.")
+        return result
+    return inner
+
+@function_usage_notifier
+def power_self(nn):
+    return nn ** nn
+
+myfunc = power_self
+print(myfunc(7))
+```
 ## `pip`
 ### Downgrade Package
 1. Uninstall the higher version.

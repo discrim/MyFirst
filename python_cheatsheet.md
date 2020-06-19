@@ -10,6 +10,7 @@
 	     1. [`super()`](#super)
 	1. [String Formatting (C언어의 format specifiers)](#string-formatting-c언어의-format-specifiers)
 	1. [Count in List with Conditions](#count-in-list-with-conditions)
+	1. [List Files in a Directory](#list-files-in-a-directory)
 1. [`pip`](#pip)
 	1. [Downgrade Package](#downgrade-package)
 1. [`numpy`](#numpy)
@@ -325,6 +326,23 @@ String: Hello, Integer: 13, Floating Point Number: 5.39
 ### Count in List with Conditions
 Source: [GeeksforGeeks](https://www.geeksforgeeks.org/python-count-of-elements-matching-particular-condition/)  
 `count = sumn(1 for elem in mylist if elem > 5)`
+### List Files in a Directory
+```python
+from os import listdir
+mypath = "D:/Desktop/test folder"
+
+# Returns a list of filenames.
+allfiles = listdir(mypath)
+print(allfiles)
+
+# Returns elements of allfiles that ends with ".txt".
+txtfiles = [ff for ff in allfiles if ff.endswith(".txt")]
+print(txtfiles)
+```
+```
+['text.txt', 'image.png', 'executable.exe']
+['text.txt']
+```
 ## `pip`
 ### Downgrade Package
 1. Uninstall the higher version.

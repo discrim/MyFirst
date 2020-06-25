@@ -21,7 +21,7 @@
 `remote_repo`: Put an address of your remote repository. (Ex. `https://github.com/username/term_project.git`)  
 `branch_name`: Put a name of your branch. (Ex. `network_function`)  
 
-### Typical workflow
+## Typical workflow
 [Clone an existing remote repository to local](#clone-an-existing-remote-repository-to-local)  
 → Edit files  
 → [Check git status](#check-git-status)  

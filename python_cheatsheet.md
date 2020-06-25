@@ -11,6 +11,7 @@
 	1. [String Formatting (C언어의 format specifiers)](#string-formatting-c언어의-format-specifiers)
 	1. [Count in List with Conditions](#count-in-list-with-conditions)
 	1. [List Files in a Directory](#list-files-in-a-directory)
+	1. [Import files from a higher directory](#import-files-from-a-higher-directory)
 1. [`pip`](#pip)
 	1. [Downgrade Package](#downgrade-package)
 1. [`numpy`](#numpy)
@@ -342,6 +343,23 @@ print(txtfiles)
 ```
 ['text.txt', 'image.png', 'executable.exe']
 ['text.txt']
+```
+### Import files from a higher directory
+You must add the higher directory explicitly to the path:
+```python
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+```
+Now Python also perceives the higher directory as a current directory `.`, you can use:
+```python
+from . import something_from_the_higher_directory
+```
+Similarly, you can add any directory to the path:
+```python
+import sys
+sys.path.append("C:/mydirectory/")
+
+from . import something_in_mydirectory
 ```
 ## `pip`
 ### Downgrade Package

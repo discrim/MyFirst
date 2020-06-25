@@ -1,6 +1,6 @@
 # Git Cheatsheet
 1. [Glossary](#glossary)
-1. [Typical workflow](#typical_workflow)
+1. [Typical workflow](#typical-workflow)
 1. [Clone an existing remote repository to local](#clone-an-existing-remote-repository-to-local)
 	1. [Master branch](#master-branch)
 	1. [Other branch](#other-branch)
@@ -23,7 +23,7 @@
 → [Commit changes](#commit-changes)  
 → [Push](#push)
 
-### Clone a certain branch from an existing remote repository to local
+### Clone an existing remote repository to local
 #### Master branch
 ```
 git clone remote_repo

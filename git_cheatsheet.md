@@ -28,7 +28,9 @@
 → [Stage files](#stage-files)  
 → [Check git status](#check-git-status)  
 → [Commit changes](#commit-changes)  
-→ [Push](#push)
+→ [Push](#push)  
+(After several repetition)  
+→ [Merge](#merge)
 
 ### Clone an existing remote repository to local
 #### Master branch
@@ -79,6 +81,14 @@ Present tense is recommended for `"your_memo"` such as `"Implement conversion fu
 git push
 ```
 If this is your first time `push`ing, you will be prompted to type `git push --set-upstream remote_repo`. Please follow the instruction.
+
+### Merge
+Ref: [Backlog](https://backlog.com/git-tutorial/kr/stepup/stepup2_4.html)  
+Let's merge `issue1` to `master`.  
+```
+git checkout master
+git merge issue1
+```
 
 ### `git reset`
 Ref: [github.io](https://gmlwjd9405.github.io/2018/05/25/git-add-cancle.html)

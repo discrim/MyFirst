@@ -9,6 +9,7 @@
 	1. [Stage files](#stage-files)
 	1. [Commit changes](#commit-changes)
 	1. [Push](#push)
+	1. [Merge](#merge)
 	1. [`git reset`](#git-reset)
 1. [Branch](#branch)
 	1. [Create a remote branch](#create-a-remote-branch)

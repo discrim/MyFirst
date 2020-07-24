@@ -15,6 +15,8 @@
 	1. [Create a remote branch](#create-a-remote-branch)
 	1. [Delete a remote branch](#delete-a-remote-branch)
 	1. [Bring a remote branch](#bring-a-remote-branch)
+1. [Misc](#misc)
+	1. [Access a GitHub Repository without GitHub Account](#access-a-github-repository-without-github-account)
 
 ## Introduction
 
@@ -171,3 +173,64 @@ If you have the following branches:
 	git pull origin branch_3
 	```
 	The `checkout` brings not from remote but a local cached contents. Thus, if you don't `pull` explicitly, you will bring and outdated content.
+## Misc
+### Access a GitHub Repository without GitHub Account
+1. Generate a private-public key pair. No need to type in email address nor passphrase; only filename is needed.
+	```
+	$ ssh-keygen -t rsa
+	Generating public/private rsa key pair.
+	Enter file in which to save the key (/d/MinGWDevInv/.ssh/id_rsa): your_private_key_filename #### Type in your desired filename here
+	Enter passphrase (empty for no passphrase): #### Type in your desired passphrase here. If you don't want any passphrase, just press Enter.
+	Enter same passphrase again: #### Do the same thing as the previous line.
+	Your identification has been saved in your_private_key_filename
+	Your public key has been saved in your_private_key_filename.pub
+	The key fingerprint is:
+	SHA256: #### Something comes here.
+	The key's randomart image is:
+	+---[RSA 3072]----+
+	| ####Something comes here. |
+	+----[SHA256]-----+
+
+	```
+1. Write a `config` file. It seems that you need to write this file if your key's filename is not exactly `id_rsa`. The tap amount does not matter; you can insert 1, 2, 3, ... taps to your `Hostname`, `User`, `IdentityFile` line.
+	```
+	Host nickname
+		HostName github.com
+		User git
+		IdentityFile ~/.ssh/your_private_key_filename
+	```
+	A little explanation of each line:  
+	- Host: a 'nickname' that differentiates multiple ssh keys if they exist. You need to type this string every time accessing GitHub, so an intuitive and simple string is recommended.  
+	- HostName: (copy that exactly)  
+	- User: (copy that exactly)  
+	- IdentityFile: the full path of your public key.  
+1. Add the public key in `Deploy Keys` of the repository. Go to your `Repository` > `Setting` > `Deploy Keys` > `Add deploy key`. Set the 'Title' as you want, i.e. MyProfessor, MyCorporateMentor, etc. For the `Key` section, copy and paste the public key of a person who has no GitHub account but still has to access your repository, i.e your professor or your corporate mentor.
+	If you are using Windows:
+	```
+	C:\Users\yourname\.ssh\clip < your_private_key_filename.pub
+	```
+	This command will copy all contents of your public key to your clipboard. If you are using other OS, use corresponding command to copy your public key. If you are not used to a terminal command, you can always open your '.pub' file with your basic text editor (i.e. `notepad` for `Windows` or `TextEdit` for `MaxOS`.) and copy the whole content and paste it to the `Key` section.
+1. Test if the procedure works.  
+For the simplist test:
+	```
+	ssh git@your_private_key_filename
+	Warning: Permanently added the RSA host key for IP address '###.###.###.###' to the list of known hosts.
+	PTY allocation request failed on channel 0
+	Hi (repo_owner)/(repo_name)! You've successfully authenticated, but GitHub does not provide shell access.
+	Connection to github.com closed.
+	```
+	Or if you want to actually clone the repository:
+	```
+	git clone git@nickname:/your_repository_name.git
+	Cloning into 'your_repository_name'...
+	The authenticity of host 'github.com (###.###.###.###)' can't be established.
+	RSA key fingerprint is SHA256: #### Something comes here.
+	Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+	Warning: Permanently added 'github.com,###.###.###.###' (RSA) to the list of known hosts.
+	remote: Enumerating objects: ###, done.
+	remote: Counting objects: 100% (###/###), done.
+	remote: Compressing objects: 100% (###/###), done.
+	remote: Total ### (delta ##), reused ### (delta ###), pack-reused ###
+	Receiving objects: 100% (###/###), #.## MiB | #.## MiB/s, done.
+	Resolving deltas: 100% (###/#), done.
+	```

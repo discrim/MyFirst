@@ -12,7 +12,10 @@
 	1. [Count in List with Conditions](#count-in-list-with-conditions)
 	1. [List Files in a Directory](#list-files-in-a-directory)
 	1. [Import files from a higher directory](#import-files-from-a-higher-directory)
+1. [Virtual Environment in Windows Using CMD: `venv`]:(#virtual-environment-in-windows-using-cmd-venv)
 1. [`pip`](#pip)
+	1. [Show / Export Installed Package List: `freeze`](#show-export-installed-package-list-freeze)
+	1. [Install Packages From a List in TXT File](#install-packages-from-a-list-in-txt-file)
 	1. [Downgrade Package](#downgrade-package)
 1. [`numpy`](#numpy)
 	1. [Array Basics](#array-basics)
@@ -361,7 +364,32 @@ sys.path.append("C:/mydirectory/")
 
 from . import something_in_mydirectory
 ```
+## Virtual Environment in Windows Using CMD: `venv`
+Ref: [코딩도장](https://dojang.io/mod/page/view.php?id=2470)  
+Assume we are saving a virtual environment in `C:\venvs` such as `C:\venvs\myenv1`.
+```
+C:\venvs>python -m venv myenv1
+C:\venvs>cd myenv1
+C:\venvs\myenv1>Scripts\activate.bat	# Activate (enter) the virtual environment.
+(myenv1) C:\venvs\myenv1>		# You are now in the virtual environment.
+(myenv1) C:\venvs\myenv1>Scripts\deactivate.bat	# Deactivate (exit) the virtual environment.
+C:\venvs\myenv1>			# Back to the root environment.
+```
+If you install a package via `pip` when you are in a virtual environment, it is only installed in the virtual environment, i.e. in `C:\venvs\myenv1\Lib\site-packages`, not in the root environment.
+```
+(myenv1) C:\venvs\myenv1>pip install mypackage
+```
+[Export Installed Package List](#export-installed-package-list) and [Install Packages From a List in TXT File](#install-packages-from-a-list-in-txt-file) can be useful when setting an environment for a certain program.
 ## `pip`
+### Show / Export Installed Package List: `freeze`
+```
+C:>pip freeze	# Display the installed packege list in CMD
+C:>pip freeze > mylist.txt	# Save the list in list.txt
+```
+### Install Packages From a List in TXT File
+```
+C:>pip install -r mylist.txt
+```
 ### Downgrade Package
 1. Uninstall the higher version.
 2. Install while specifying a desired version.

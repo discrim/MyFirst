@@ -56,13 +56,13 @@ Source: [클리앙](https://www.clien.net/service/board/lecture/8390021), [Exten
 https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/  
 You can change the installation path if you want, but be sure to note it because we need the path itself at the later step.
 1. We just installed 'package manager', and now we need to install some packages. After the installation is complete, the `MinGW Installation Manager` pops up. From there, mark four things:  
-```
-mingw-developer-toolkit-bin
-mingw32-base-bin
-mingw32-gcc-g++-bin
-msys-base-bin
-```
-Be patient: it takes ~5 sec after you select a package and click 'Mark for Installation'.
+	```
+	mingw-developer-toolkit-bin
+	mingw32-base-bin
+	mingw32-gcc-g++-bin
+	msys-base-bin
+	```
+	Be patient: it takes ~5 sec after you select a package and click 'Mark for Installation'.
 1. Go to the top left of the window and click `Installation -> Apply Changes`. Then the installation automatically starts. This will take a while. If something fails, just click `Installation -> Apply` Changes again.
 1. Go to system environmental variable setting, i.e. hit the Windows key on your keyboard and type 'environmental variable' then select 'System Environmental Variable' (it may differ since I don't exactly know the term in English Windows).
 1. Click `Environmental Variable` button.

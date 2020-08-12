@@ -24,7 +24,7 @@
 	1. [What is `YAML`? - Crash Course](#what-is-yaml---crash-course)
 	1. [How to use `YAML` file in Python? - Basics](#how-to-use-yaml-file-in-python---basics)
 1. [Anaconda](#anaconda)
-	1. [How to run Anaconda Python in Notepad++](#how-to-run-anaconda-python-in-notepad++)
+	1. [How to run Anaconda Python in Notepad++](#how-to-run-anaconda-python-in-notepad)
 ## Pure Python
 ### Line Continuation
 Source: [Stackoverflow](https://stackoverflow.com/questions/53162/how-can-i-do-a-line-break-line-continuation-in-python)  

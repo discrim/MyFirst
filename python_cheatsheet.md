@@ -23,6 +23,8 @@
 1. [`PyYAML`](#pyyaml)
 	1. [What is `YAML`? - Crash Course](#what-is-yaml---crash-course)
 	1. [How to use `YAML` file in Python? - Basics](#how-to-use-yaml-file-in-python---basics)
+1. [Anaconda](#anaconda)
+	1. [How to run Anaconda Python in Notepad++](#how-to-run-anaconda-python-in-notepad++)
 ## Pure Python
 ### Line Continuation
 Source: [Stackoverflow](https://stackoverflow.com/questions/53162/how-can-i-do-a-line-break-line-continuation-in-python)  
@@ -451,3 +453,6 @@ Run `yaml_test.py`. The output is as follows:
 [{'highschool': [{'name': 'ABC High', 'GPA': 3.45}],
 'college': [{'name': 'DEF University', 'GPA': 3.78}]}]}
 ```
+## Anaconda
+### How to run Anaconda Python in Notepad++
+Source: [Here](https://samyzaf.com/braude/PYTHON/notepad.txt)

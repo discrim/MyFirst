@@ -22,6 +22,8 @@
 1. [`numpy`](#numpy)
 	1. [Array Basics](#array-basics)
 	1. [Random Number](#random-number)
+1. [`imageio`](#imageio)
+	1. [Make GIF Out of Multiple Still Images](#make-gif-out-of-multiple-still-images)
 1. [`PyYAML`](#pyyaml)
 	1. [What is `YAML`? - Crash Course](#what-is-yaml---crash-course)
 	1. [How to use `YAML` file in Python? - Basics](#how-to-use-yaml-file-in-python---basics)
@@ -428,7 +430,37 @@ Make an array of 2-row, 3-col ...
 * numbers between `\[0, 1)` from uniform distributtion: `x = np.random.rand(2, 3)`
 * numbers from standard normal distribution: `x = np.random.randn(2, 3)`
 * integers with some parameters: `x = np.random.randint(low=4, high=17, size=(2, 3))`
-(`[low, high)`. `high`, `size` are optional)
+(`[low, high)`. `high`, `size` are optional
+## `imageio`
+### Make GIF Out of Multiple Still Images
+Ref: [Basic](https://stackoverflow.com/questions/753190/programmatically-generate-video-or-animated-gif-in-python), [Change Playback Speed](https://stackoverflow.com/questions/38433425/custom-frame-duration-for-animated-gif-in-python-imageio)  
+Basic
+```python
+import imageio
+images = []
+for filename in filenames:
+    images.append(imageio.imread(filename))
+imageio.mimsave('/path/to/movie.gif', images)
+```
+Application with file I/O and slower playback speed (1 fps)
+```python
+from os import listdir
+from os.path import basename
+from imageio import imread, mimsave
+
+def main(dir):
+    images = []
+    allfiles = listdir(dir)
+    pngfiles = [ff for ff in allfiles if ff.endswith('.png')]	# Bring all PNG files
+    for filename in pngfiles:
+        images.append(imread(dir + '/' + filename))
+    kwargs = {"duration":1}					# Time to maintain a single image in seconds
+    mimsave(dir + '/movie.gif', images, **kwargs)
+
+if __name__ == "__main__":
+    mypath = r'D:\still_image_storage'
+    main(mypath)
+```
 ## `PyYAML`
 ### What is `YAML`? - Crash Course
 A type of file that stores data in a certain structure.  

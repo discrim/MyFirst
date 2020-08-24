@@ -12,7 +12,7 @@
 	1. [Count in List with Conditions](#count-in-list-with-conditions)
 	1. [File I/O](#file-io)
 		1. [List Files in a Directory](#list-files-in-a-directory)
-		1. [Extract a Filename from Path](#extract-a-filename-from-path)
+		1. [Extract a Filename or Last Folder from Path](#extract-a-filename-or-last-folder-from-path)
 	1. [Import files from a higher directory](#import-files-from-a-higher-directory)
 1. [Virtual Environment in Windows Using CMD: `venv`](#virtual-environment-in-windows-using-cmd-venv)
 1. [`pip`](#pip)
@@ -352,13 +352,15 @@ print(txtfiles)
 ['text.txt', 'image.png', 'executable.exe']
 ['text.txt']
 ```
-#### Extract a Filename from Path
+#### Extract a Filename or Last Folder from Path
 ```python
 from os.path import basename
 print(basename('D:/folder/file.exe'))
+print(basename('D:/folder/another_folder'))
 ```
 ```
 'file.exe'
+'another_folder'
 ```
 ### Import files from a higher directory
 You must add the higher directory explicitly to the path:

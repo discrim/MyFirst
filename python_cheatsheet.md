@@ -10,7 +10,9 @@
 	     1. [`super()`](#super)
 	1. [String Formatting (C언어의 format specifiers)](#string-formatting-c언어의-format-specifiers)
 	1. [Count in List with Conditions](#count-in-list-with-conditions)
-	1. [List Files in a Directory](#list-files-in-a-directory)
+	1. [File I/O](#file-io)
+		1. [List Files in a Directory](#list-files-in-a-directory)
+		1. [Extract a Filename from Path](#extract-a-filename-from-path)
 	1. [Import files from a higher directory](#import-files-from-a-higher-directory)
 1. [Virtual Environment in Windows Using CMD: `venv`](#virtual-environment-in-windows-using-cmd-venv)
 1. [`pip`](#pip)
@@ -332,7 +334,8 @@ String: Hello, Integer: 13, Floating Point Number: 5.39
 ### Count in List with Conditions
 Source: [GeeksforGeeks](https://www.geeksforgeeks.org/python-count-of-elements-matching-particular-condition/)  
 `count = sumn(1 for elem in mylist if elem > 5)`
-### List Files in a Directory
+### File I/O
+#### List Files in a Directory
 ```python
 from os import listdir
 mypath = "D:/Desktop/test folder"
@@ -348,6 +351,14 @@ print(txtfiles)
 ```
 ['text.txt', 'image.png', 'executable.exe']
 ['text.txt']
+```
+#### Extract a Filename from Path
+```python
+from os.path import basename
+print(basename('D:/folder/file.exe'))
+```
+```
+'file.exe'
 ```
 ### Import files from a higher directory
 You must add the higher directory explicitly to the path:

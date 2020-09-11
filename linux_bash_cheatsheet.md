@@ -2,7 +2,7 @@
 Also about WSL (Windows Subsystem for Linux)
 1. [WSL 실제 경로 / Actual directory of WSL](#wsl-실제-경로--actual-directory-of-wsl)
 1. [Reset the Password in WSL](#reset-the-password-in-wsl)
-1. [Global Environmental Variable](#global-environment-variable)
+1. [Global Environment Variable](#global-environment-variable)
 ### WSL 실제 경로 / Actual directory of WSL
 - Source: [Windows 10 - Ubuntu on Windows 10 서로간 파일 시스템 접근하기](https://snowdeer.github.io/windows/2018/01/07/windows10-ubuntu-file-directory/)  
 `C:\Users\<username>\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs`
@@ -32,7 +32,7 @@ Source: [StackExchange](https://askubuntu.com/questions/772050/reset-the-passwor
 	```
 	>ubuntu1804 config --default-user your_username
 	```
-### Global Environmental Variable
+### Global Environment Variable
 Ref: [Blog](https://memory.today/dev/23)
 1. Backup `/etc/profile` with `sudo`.
 	```

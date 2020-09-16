@@ -7,7 +7,10 @@
 1. [Command Line Arguments Parsing](#command-line-arguments-parsing)
 	1. [Type Casting from String (Character Array) to Integer](#type-casting-from-string-character-array-to-integer)
 1. [`make` and makefile](#make-and-makefile)
-1. [Vector Iteration](#vector-iteration)
+1. [Vector](#vector)
+	1. [Basics](#basics)
+	1. [Member Functions](#member-functions)
+	1. [Vector Iteration](#vector-iteration)
 ### Dynamic Allocation 동적 할당, 동적 어레이
 Source: [cplusplus.com](http://www.cplusplus.com/doc/tutorial/dynamic/)
 #### Single Variable
@@ -63,5 +66,42 @@ int main(int argc, char* argv[])
 ```
 ### `make` and makefile
 - Source: [make와 Makefile](https://bowbowbow.tistory.com/12)
-### Vector Iteration
+### Vector
+#### Basics
+* Array-based
+* STL -> Uses `template` -> Can store any type of data
+* Need `#include <vector>`
+* `namespace` is `std`
+```cpp
+std::vector<int> v1;			// Empty vector.
+std::vector<int> v2(3);			// {0, 0, 0}
+std::vector<int> v3(4, 2);		// {2, 2, 2, 2}
+std::vector<int> v4 = {1, 2, 3};	// {1, 2, 3}
+std::vector<int> v5(v3);		// Copy v3 to make v4.
+```
+#### Member Functions
+```cpp
+std::vector<int> vv = {1, 2};
+vv.assign(5, 2);		// Clear vv and fill it with five 2's.
+vv.at(idx);			// Refer to idx'th element of vv. Slower than vv[idx]
+				// but range check is included so it is safer.
+vv.front();			// Refer to the first element.
+vv.back();			// Refer to the last element.
+vv.clear();			// Erase all the element but still occupies memory.
+vv.size();			// Number of elements in the vector.
+vv.capacity();			// Numbef of elements that the vector can store
+				// without allocating more memory.
+vv.push_back(val);		// Append val at the end. If need more memory, double the capacity.
+vv.pop_back();			// Delete the last element but does not free its memory.
+vv.swap(another_vector);	// Swap everything of vv and another_vector (elements, capacity, etc.)
+vv.insert(5, 8);		// At index 5, insert 8 while pushing orinal values.
+vv.insert(2, 3, 4);		// At index 2, insert three 4's while pushing original values.
+vv.empty();			// true if the vector has no elements, i.e. true if vv.size() == 0.
+```
+#### Vector Iteration
 Source: [여기](https://hyeonstorage.tistory.com/318)
+```cpp
+// Update here
+v.erase(iter);
+v.
+```

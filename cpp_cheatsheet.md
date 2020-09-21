@@ -8,10 +8,12 @@
 	1. [Type Casting from String (Character Array) to Integer](#type-casting-from-string-character-array-to-integer)
 1. [`make` and makefile](#make-and-makefile)
 1. [Vector](#vector)
-	1. [Basics](#basics)
+	1. [Vector Basics](#vector-basics)
 	1. [Member Functions](#member-functions)
 	1. [Vector Iteration](#vector-iteration)
 1. [Namespace](#namespace)
+	1. [Namespace Basis](#namespace-basics)
+	1. [Simplified Access](#simplified-access)
 1. [Format String (Can Behave as Format Specifier of C)](#format-string-can-behave-as-format-specifier-of-c))
 ### Dynamic Allocation 동적 할당, 동적 어레이
 Source: [cplusplus.com](http://www.cplusplus.com/doc/tutorial/dynamic/)
@@ -69,7 +71,7 @@ int main(int argc, char* argv[])
 ### `make` and makefile
 - Source: [make와 Makefile](https://bowbowbow.tistory.com/12)
 ### Vector
-#### Basics
+#### Vector Basics
 * Array-based
 * STL -> Uses `template` -> Can store any type of data
 * Need `#include <vector>`
@@ -109,7 +111,7 @@ v.
 ```
 ### Namespace
 Ref: [TCPSchool](http://www.tcpschool.com/cpp/cpp_scope_namespace)  
-#### Basics
+#### Namespace Basics
 - Can be defined at global location or inside of another namespace, but not in a block.
 - Has external link; namespace defined in a header file can be used in separate source file.
 - Use `::`, `scope resolution operator` to access a namespace.

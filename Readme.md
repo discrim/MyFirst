@@ -11,6 +11,8 @@
 1. [MinGW](#mingw)
 	1. [How to Install MinGW Development Environment](#how-to-install-mingw-development-environment)
 	1. [How to Uninstall MinGW](#how-to-uninstall-mingw)
+1. [Notepad++](#notepad++)
+	1. [Markdown Style](#markdown-style)
 ## GitHub Markdown
 `*Itallic*` -> *Itallic*  
 `**Bold**` -> **Bold**
@@ -75,3 +77,6 @@ Source: [YouTube](https://www.youtube.com/watch?v=WWSK8wYvs2w)
 1. In `MinGW Installation Manager`, uninstall every individual packages you have installed.
 1. Delete the folder that `MinGW` is installed.
 1. Remove `MinGW` related directories from `System Variables - Path`.
+## Notepad++
+### Markdown Style
+Source: [Here](https://community.notepad-plus-plus.org/topic/17367/markdown-files-are-colored-with-dark-text-on-a-light-background-even-with-a-dark-theme-how-do-i-change/4)

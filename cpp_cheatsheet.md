@@ -11,6 +11,8 @@
 	1. [Basics](#basics)
 	1. [Member Functions](#member-functions)
 	1. [Vector Iteration](#vector-iteration)
+1. [Namespace](#namespace)
+1. [Format String (Can Behave as Format Specifier of C)](#format-string-can-behave-as-format-specifier-of-c))
 ### Dynamic Allocation 동적 할당, 동적 어레이
 Source: [cplusplus.com](http://www.cplusplus.com/doc/tutorial/dynamic/)
 #### Single Variable
@@ -104,4 +106,91 @@ Source: [여기](https://hyeonstorage.tistory.com/318)
 // Update here
 v.erase(iter);
 v.
+```
+### Namespace
+Ref: [TCPSchool](http://www.tcpschool.com/cpp/cpp_scope_namespace)  
+#### Basics
+- Can be defined at global location or inside of another namespace, but not in a block.
+- Has external link; namespace defined in a header file can be used in separate source file.
+- Use `::`, `scope resolution operator` to access a namespace.
+```c++
+// myns.h
+#include <string>
+
+namespace yonsei {
+	void display();
+	int year = 1885;
+	std::string color;
+}
+
+namespace michigan {
+	void display();
+	int year;
+	std::string city = "Ann Arbor";
+}
+```
+```c++
+// myns_test1.cpp
+#include <iostream>
+#include "myns.h"
+
+int main(void) {
+	std::cout << yonsei::year << "\n";
+	yonsei::color = "Royal Blue"; // Declared but undefined in header
+	std::cout << yonsei::color << "\n";
+	
+	michigan::year = 1817; // Declared but undefined in header
+	std::cout << michigan::year << "\n";
+	std::cout << michigan::color << "\n";
+}
+```
+```
+1885
+Royal Blue
+1817
+Ann Arbor
+```
+#### Simplified Access
+To access a namespace by typing `myspace::` everytime is tedious. There are two solusions.
+- `using` directive: `using namespace myspace` enables to access all the contents in `myspace` without typing `myspace::` in front of its members.
+- `using` declaration: `using myspace::yournumber` enables to access `yournumber` in `myspace` without typing `myspace::` in fron of `yournumber`, but not the other members.
+```cpp
+// myns_test2.cpp
+#include <iostream>
+#include "myns.h" // Same header as above.
+
+using namespace yonsei;
+// using michigan::year;
+	// Invokes error "reference to 'year' is ambiguous"
+	// because both yonsei and michigan have 'year' in them.
+using michigan::city;
+
+int main(void) {
+	std::cout << year << "\n";
+	yonsei::color = "Royal Blue"; // Declared but undefined in header
+	std::cout << color << "\n";
+	
+	michigan::year = 1817; // Declared but undefined in header
+	std::cout << michigan::year << "\n";
+	std::cout << city << "\n";
+}
+
+```
+```
+1885
+Royal Blue
+1817
+Ann Arbor
+```
+### Format String (Can Behave as Format Specifier of C)
+Ref: [cppreference.com](https://en.cppreference.com/w/cpp/utility/format/format)  
+Use `std::format()` in `<format>` header if `C++20` or later.
+```c++
+#include <iostream>
+#include <format>
+
+int main() {
+	std::cout << std::format("Hello {}!\n", "world"); // Prints "Hello world!"
+	std::cout << std::format("{} {}!", "Hello", "world", "something"); // Prints "Hello world!"
+}
 ```

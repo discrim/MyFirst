@@ -11,7 +11,7 @@
 1. [MinGW](#mingw)
 	1. [How to Install MinGW Development Environment](#how-to-install-mingw-development-environment)
 	1. [How to Uninstall MinGW](#how-to-uninstall-mingw)
-1. [Notepad++](#notepad++)
+1. [Notepad++](#notepad)
 	1. [Markdown Style](#markdown-style)
 ## GitHub Markdown
 `*Itallic*` -> *Itallic*  

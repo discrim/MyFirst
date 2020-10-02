@@ -22,6 +22,7 @@
 1. [`numpy`](#numpy)
 	1. [Array Basics](#array-basics)
 	1. [Random Number](#random-number)
+1. [`matplotlib`](#matplotlib)
 1. [`imageio`](#imageio)
 	1. [Make GIF Out of Multiple Still Images](#make-gif-out-of-multiple-still-images)
 1. [`PyYAML`](#pyyaml)
@@ -431,6 +432,20 @@ Make an array of 2-row, 3-col ...
 * numbers from standard normal distribution: `x = np.random.randn(2, 3)`
 * integers with some parameters: `x = np.random.randint(low=4, high=17, size=(2, 3))`
 (`[low, high)`. `high`, `size` are optional
+## `matplotlib`
+### Make a Figure for 3D Plot
+```python
+from matplotlib.pyplot import figure
+fig = figure()
+ax = fig.gca(projection='3d')
+```
+`gca()`: Acronym of 'Get Current Axis'.
+### Aspect Ratio of 3D Plot
+If I want to limit the maximum and minimum of axes values as `x` to be `-0.5 ~ 0.5`, `y` to be `-0.5 ~ 0.5`, `z` to be `0 ~ 1.5`, displaying the plot with ratio `x:y:z = 2:2:3` will make it easy to read the plot with bare eyes. We cannot change the ratio between `x` and `y`, but assuming the ratio of `x` and `y` is the same, we can change the ratio between `non-z` and `z`. Here, it should be `2:3`. We need a ratio value of `z / non-z` for the argument of `figaspect` which is `3 / 2 = 1.5` in this case.
+```python
+from matplotlib.pyplot import figure, figaspect
+fig = figure(figsize=figaspect(1.5) * 1)
+```
 ## `imageio`
 ### Make GIF Out of Multiple Still Images
 Ref: [Basic](https://stackoverflow.com/questions/753190/programmatically-generate-video-or-animated-gif-in-python), [Change Playback Speed](https://stackoverflow.com/questions/38433425/custom-frame-duration-for-animated-gif-in-python-imageio)  

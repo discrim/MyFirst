@@ -65,7 +65,7 @@ Ref: [Blog](https://memory.today/dev/23)
 	$ echo $YOURVAR
 	/home/(username)/my_project/my_folder/my_executable
 	```
-### How to install Ananconda on Linux
+### How to install Anaconda on Linux
 ```bash
 # Go to a directory to install Anaconda. I prefer /home
 cd /home

@@ -32,6 +32,9 @@
 	1. [How to use `YAML` file in Python? - Basics](#how-to-use-yaml-file-in-python---basics)
 1. [Anaconda](#anaconda)
 	1. [How to run Anaconda Python in Notepad++](#how-to-run-anaconda-python-in-notepad)
+1. [Useful Packages](#useful-packages)
+	1. [Machine Learning / Deep Learning](#machine-learning--deep-learning)
+		1. [torchinfo](#torchinfo)
 ## Pure Python
 ### Line Continuation
 Source: [Stackoverflow](https://stackoverflow.com/questions/53162/how-can-i-do-a-line-break-line-continuation-in-python)  
@@ -518,3 +521,9 @@ Run `yaml_test.py`. The output is as follows:
 ## Anaconda
 ### How to run Anaconda Python in Notepad++
 Source: [Here](https://samyzaf.com/braude/PYTHON/notepad.txt)
+## Useful Packages
+### Machine Learning / Deep Learning
+#### torchinfo
+- Updated in this doc: 2021-06-08
+- Source: https://github.com/TylerYep/torchinfo
+- This package shows PyTorch network information per layer in a similar form of TensorFlow's `model.summary()`; it can show layer type, kernel shape, output shape, param #, FLOPs, etc.

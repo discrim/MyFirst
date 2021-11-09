@@ -25,6 +25,7 @@
 1. [`matplotlib`](#matplotlib)
 	1. [Make a Figure for 3D Plot](#make-a-figure-for-3d-plot)
 	1. [Aspect Ratio of 3D Plot](#aspect-ratio-of-3d-plot)
+	1. [Code Snippet for Showing Numpy Array as a Single Channel (Grayscale) Image](#code-snippet-for-showing-numpy-array-as-a-single-channel-grayscale-image)
 1. [`imageio`](#imageio)
 	1. [Make GIF Out of Multiple Still Images](#make-gif-out-of-multiple-still-images)
 1. [`PyYAML`](#pyyaml)
@@ -450,6 +451,14 @@ If I want to limit the maximum and minimum of axes values as `x` to be `-0.5 ~ 0
 ```python
 from matplotlib.pyplot import figure, figaspect
 fig = figure(figsize=figaspect(1.5) * 1)
+```
+### Code Snippet for Showing Numpy Array as a Single Channel (Grayscale) Image
+```python
+fig, axs = plt.subplots(2, 2)
+img = axs[0, 0].imshow(image, cmap="jet")
+axs[0, 0].set_title("This is a Title")
+plt.colorbar(img, ax=axs[0, 0])
+plt.show()
 ```
 ## `imageio`
 ### Make GIF Out of Multiple Still Images

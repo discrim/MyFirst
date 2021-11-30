@@ -15,6 +15,7 @@ set history=1000
 set ruler
 syntax on
 filetype indent on
+colorscheme elflord
 ```
 ### Insert Actual Tab
 Source: [Stackoverflow](https://stackoverflow.com/questions/6951672/how-can-i-insert-a-real-tab-character-in-vim/6951704)  

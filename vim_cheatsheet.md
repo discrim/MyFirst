@@ -5,6 +5,7 @@
 1. [Tab Multiple Lines](#tab-multiple-lines)
 ### Initial ~/.vimrc Setting
 ```vim
+set mouse+=a " Copying mouse-selected block doesn't include line numbers. Official name: enable mouse mode.
 set nu
 set autoindent
 set cindent

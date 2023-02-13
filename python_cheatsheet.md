@@ -1,4 +1,6 @@
-# Python Cheatsheet
+Python Cheatsheet
+===
+
 1. [Pure Python](#pure-python)
 	1. [Line Continuation](#line-continuation)
 	1. [Class](#class)
@@ -36,8 +38,11 @@
 1. [Useful Packages](#useful-packages)
 	1. [Machine Learning / Deep Learning](#machine-learning--deep-learning)
 		1. [torchinfo](#torchinfo)
-## Pure Python
-### Line Continuation
+
+# Pure Python
+
+## Line Continuation
+
 Source: [Stackoverflow](https://stackoverflow.com/questions/53162/how-can-i-do-a-line-break-line-continuation-in-python)  
 Enclose with parantheses or add backslash.
 ```python
@@ -48,9 +53,13 @@ b = (i1 < 20) and \
     (i2 < 30) and \
     (i3 < 40)
 ```
-### Class
+
+## Class
+
 Source: [점프 투 파이썬](https://wikidocs.net/28)
-#### Basics
+
+### Basics
+
 ```python
 class FourCal:
     def setdata(self, in1, in2):
@@ -103,7 +112,9 @@ b.div():  0.42857142857142855
 >>>
 ```
 - `self`: Instance
-#### Constructor
+
+### Constructor
+
 ```python
 class FourCal:
     def __init__(self, in1, in2):
@@ -136,7 +147,9 @@ a.sub():  2
 a.div():  2.0
 >>>
 ```
-#### Inheritance
+
+### Inheritance
+
 ```python
 class FourCal:
     def __init__(self, in1, in2):
@@ -174,7 +187,9 @@ a.div():  2.0
 a.pow():  16
 >>>
 ```
-#### Method Overriding
+
+### Method Overriding
+
 ```python
 class FourCal:
     def __init__(self, in1, in2):
@@ -207,7 +222,9 @@ print("a.div(): ", a.div())
 a.div():  0
 >>>
 ```
-#### Class variable
+
+### Class variable
+
 ```python
 class Family:
     lastname = "Kim"    # Class variable
@@ -242,12 +259,15 @@ id(a.lastname):  59794464
 id(b.lastname):  59794464
 >>>
 ```
-#### `super()`
+
+### `super()`
+
 Source: [Tistory](https://rednooby.tistory.com/56), [#ashcode](https://hashcode.co.kr/questions/6419/python3-super%EC%99%80-supera-self%EC%9D%98-%EC%B0%A8%EC%9D%B4%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94)  
 어떤 자식 클래스에서 `mymethod()`를 재정의했다고 가정하자.  
 (즉 부모 클래스에 `mymethod()`가 있고, 자식 클래스에도 `mymethod()`가 있는데 부모것과 동작이 다르다)  
 이 때, 자식 클래스 안에서 부모 클래스의 `mymethod()`를 사용하려면 `super().mymethod()`를 사용하고, 자식 클래스의 `mymethod()`를 사용하려면 `self.mymethod()`를 사용한다.  
 Example:
+
 ```python
 class Parent():    
     def sing_once( self ):
@@ -287,42 +307,45 @@ quite voice ~
 LOUD VOICE !
 >>>
 ```
+
 자식 클래스가 부모 클래스의 메소드를 사용하려면 How to let a child class use its parent's method
 1. 부모 클래스의 함수를 재정의하지 않는다. Don't redefine the parent's method.
-```python
-class father():
-    def handsome():
-        print("Handsome!")
+	```python
+	class father():
+		def handsome():
+			print("Handsome!")
 
-class brother():
-    # Don't redefine handsome()
+	class brother():
+		# Don't redefine handsome()
 
-bro = brother()
-bro.handsome()
-```
-```
-Handsome!
->>>
-```
-2. 부모 클래스의 함수를 재정의하고 `super()`를 사용한다. Redefine the parent's method and use `super()`.
-```python
-class father():
-    def handsome():
-        print("Handsome!")
+	bro = brother()
+	bro.handsome()
+	```
+	```
+	Handsome!
+	>>>
+	```
+1. 부모 클래스의 함수를 재정의하고 `super()`를 사용한다. Redefine the parent's method and use `super()`.
+	```python
+	class father():
+		def handsome():
+			print("Handsome!")
 
-class brother():
-    def handsome():
-        super().handsome()  # Equivalent: super(father, self).handsome()
-        # You can edit this brother version of handsome() if you add codes.
+	class brother():
+		def handsome():
+			super().handsome()  # Equivalent: super(father, self).handsome()
+			# You can edit this brother version of handsome() if you add codes.
 
-bro = brother()
-bro.handsome()
-```
-```
-Handsome!
->>>
-```
-### String Formatting (C언어의 format specifiers)
+	bro = brother()
+	bro.handsome()
+	```
+	```
+	Handsome!
+	>>>
+	```
+
+## String Formatting (C언어의 format specifiers)
+
 Source: [learnpython.org](https://www.learnpython.org/en/String_Formatting), [Python Official](https://docs.python.org/3/library/string.html#format-examples)
 2가지 방법이 있다.
 - The old %-formatting
@@ -340,11 +363,16 @@ String: Hello, Integer: 13, Floating Point Number: 5.39
 String: Hello, Integer: 13, Floating Point Number: 5.39
 >>>
 ```
-### Count in List with Conditions
+
+## Count in List with Conditions
+
 Source: [GeeksforGeeks](https://www.geeksforgeeks.org/python-count-of-elements-matching-particular-condition/)  
 `count = sumn(1 for elem in mylist if elem > 5)`
-### File I/O
-#### List Files in a Directory
+
+## File I/O
+
+### List Files in a Directory
+
 ```python
 from os import listdir
 mypath = "D:/Desktop/test folder"
@@ -361,7 +389,9 @@ print(txtfiles)
 ['text.txt', 'image.png', 'executable.exe']
 ['text.txt']
 ```
-#### Extract a Filename or Last Folder from Path
+
+### Extract a Filename or Last Folder from Path
+
 ```python
 from os.path import basename
 print(basename('D:/folder/file.exe'))
@@ -371,16 +401,20 @@ print(basename('D:/folder/another_folder'))
 'file.exe'
 'another_folder'
 ```
-### Import files from a higher directory
+
+## Import files from a higher directory
+
 You must add the higher directory explicitly to the path:
 ```python
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 ```
+
 Now Python also perceives the higher directory as a current directory `.`, you can use:
 ```python
 from . import something_from_the_higher_directory
 ```
+
 Similarly, you can add any directory to the path:
 ```python
 import sys
@@ -388,7 +422,9 @@ sys.path.append("C:/mydirectory/")
 
 from . import something_in_mydirectory
 ```
-## Virtual Environment in Windows Using CMD: `venv`
+
+# Virtual Environment in Windows Using CMD: `venv`
+
 Ref: [코딩도장](https://dojang.io/mod/page/view.php?id=2470)  
 Assume we are saving a virtual environment in `C:\venvs` such as `C:\venvs\myenv1`.
 ```
@@ -399,60 +435,81 @@ C:\venvs\myenv1>Scripts\activate.bat	# Activate (enter) the virtual environment.
 (myenv1) C:\venvs\myenv1>Scripts\deactivate.bat	# Deactivate (exit) the virtual environment.
 C:\venvs\myenv1>			# Back to the root environment.
 ```
+
 If you install a package via `pip` when you are in a virtual environment, it is only installed in the virtual environment, i.e. in `C:\venvs\myenv1\Lib\site-packages`, not in the root environment.
 ```
 (myenv1) C:\venvs\myenv1>pip install mypackage
 ```
+
 [Export Installed Package List](#export-installed-package-list) and [Install Packages From a List in TXT File](#install-packages-from-a-list-in-txt-file) can be useful when setting an environment for a certain program.
-## `pip`
-### Show / Export Installed Package List: `freeze`
+
+# `pip`
+
+## Show / Export Installed Package List: `freeze`
+
 ```
 C:>pip freeze	# Display the installed packege list in CMD
 C:>pip freeze > mylist.txt	# Save the list in list.txt
 ```
-### Install Packages From a List in TXT File
+
+## Install Packages From a List in TXT File
+
 ```
 C:>pip install -r mylist.txt
 ```
-### Downgrade Package
+
+## Downgrade Package
+
 1. Uninstall the higher version.
-2. Install while specifying a desired version.
+1. Install while specifying a desired version.
 e.g.
 ```
 pip3 uninstall numpy <- Uninstall numpy 1.18.2
 pip3 install numpy==1.16.1
 ```
+
 Solution to my incident on 2020-04-09 while doing EECS 504 final project (Ref: [StackOverflow](https://stackoverflow.com/questions/55890813/how-to-fix-object-arrays-cannot-be-loaded-when-allow-pickle-false-for-imdb-loa))
-## `numpy`
+
+# `numpy`
+
 Assume `import numpy as np`.
 [https://numpy.org/doc/stable/genindex.html](https://numpy.org/doc/stable/genindex.html)
-### Array Basics
+
+## Array Basics
 * Make an array: `x = np.array([[1, 2], [3, 4]])`
 * [numpy.append](https://numpy.org/doc/stable/reference/generated/numpy.append.html#numpy.append): `z = np.append(x, y, axis=0)`
 * [numpy.transpose](https://numpy.org/doc/stable/reference/generated/numpy.transpose.html#numpy.transpose): `y = x.T`. For complicated transpose (3D axis swap, axis change), see the reference.
 * [numpy.delete](https://numpy.org/doc/stable/reference/generated/numpy.delete.html#numpy.delete): `y = np.delete(x, obj=2, axis=1)` to delete x's 2nd index of 1st axis (which is 3rd column).
-### Random Number
+* 
+## Random Number
 Source: [numpy](https://numpy.org/doc/stable/reference/random/legacy.html#simple-random-data)  
 Make an array of 2-row, 3-col ...
 * numbers between `\[0, 1)` from uniform distributtion: `x = np.random.rand(2, 3)`
 * numbers from standard normal distribution: `x = np.random.randn(2, 3)`
 * integers with some parameters: `x = np.random.randint(low=4, high=17, size=(2, 3))`
 (`[low, high)`. `high`, `size` are optional
-## `matplotlib`
-### Make a Figure for 3D Plot
+
+# `matplotlib`
+
+## Make a Figure for 3D Plot
+
 ```python
 from matplotlib.pyplot import figure
 fig = figure()
 ax = fig.gca(projection='3d')
 ```
 `gca()`: Acronym of 'Get Current Axis'.
-### Aspect Ratio of 3D Plot
+
+## Aspect Ratio of 3D Plot
+
 If I want to limit the maximum and minimum of axes values as `x` to be `-0.5 ~ 0.5`, `y` to be `-0.5 ~ 0.5`, `z` to be `0 ~ 1.5`, displaying the plot with ratio `x:y:z = 2:2:3` will make it easy to read the plot with bare eyes. We cannot change the ratio between `x` and `y`, but assuming the ratio of `x` and `y` is the same, we can change the ratio between `non-z` and `z`. Here, it should be `2:3`. We need a ratio value of `z / non-z` for the argument of `figaspect` which is `3 / 2 = 1.5` in this case.
 ```python
 from matplotlib.pyplot import figure, figaspect
 fig = figure(figsize=figaspect(1.5) * 1)
 ```
-### Code Snippet for Showing Numpy Array as a Single Channel (Grayscale) Image
+
+## Code Snippet for Showing Numpy Array as a Single Channel (Grayscale) Image
+
 ```python
 fig, axs = plt.subplots(2, 2)
 img = axs[0, 0].imshow(image, cmap="jet")
@@ -460,9 +517,12 @@ axs[0, 0].set_title("This is a Title")
 plt.colorbar(img, ax=axs[0, 0])
 plt.show()
 ```
-## `imageio`
-### Make GIF Out of Multiple Still Images
+
+# `imageio`
+
+## Make GIF Out of Multiple Still Images
 Ref: [Basic](https://stackoverflow.com/questions/753190/programmatically-generate-video-or-animated-gif-in-python), [Change Playback Speed](https://stackoverflow.com/questions/38433425/custom-frame-duration-for-animated-gif-in-python-imageio)  
+
 Basic
 ```python
 import imageio
@@ -471,6 +531,7 @@ for filename in filenames:
     images.append(imageio.imread(filename))
 imageio.mimsave('/path/to/movie.gif', images)
 ```
+
 Application with file I/O and slower playback speed (1 fps)
 ```python
 from os import listdir
@@ -490,9 +551,13 @@ if __name__ == "__main__":
     mypath = r'D:\still_image_storage'
     main(mypath)
 ```
-## `PyYAML`
-### What is `YAML`? - Crash Course
+
+# `PyYAML`
+
+## What is `YAML`? - Crash Course
+
 A type of file that stores data in a certain structure.  
+
 E.g. Assume you open notepad and write the following:
 ```yaml
 firstname: John
@@ -506,33 +571,49 @@ education:
     - name: DEF University
       GPA: 3.78
 ```
-and save it as `JohnD.yaml` (not `JohnD.txt`). Then you just stored the data in `YAML` type.
-### How to use `YAML` file in Python? - Basics
+and save it as `JohnD.yaml` (not `JohnD.txt`). Then you just stored the data in `YAML` type
+
+## How to use `YAML` file in Python? - Basics
+
 1. Install `PyYAML`
-```
-pip install pyyaml
-```
-2. See the example below.
-```python
-# yaml_test.py
-import yaml
-file = open('JohnD.yaml')
-dict_from_yaml = yaml.safe_load(file)	# Extract and convert data from YAML file into dictionary type
-print(dict_from_yaml)
-```
-Put `JohnD.yaml` (of the previous section) in the folder where `yaml_test.py` exists.  
-Run `yaml_test.py`. The output is as follows:
-```
-{'firstname': 'John', 'lastname': 'Doe', 'age': 33, 'education':
-[{'highschool': [{'name': 'ABC High', 'GPA': 3.45}],
-'college': [{'name': 'DEF University', 'GPA': 3.78}]}]}
-```
-## Anaconda
-### How to run Anaconda Python in Notepad++
+	```
+	pip install pyyaml
+	```
+1. Write the following code.
+	```python
+	# yaml_test.py
+	import yaml
+	file = open('JohnD.yaml')
+	dict_from_yaml = yaml.safe_load(file)	# Extract and convert data from YAML file into dictionary type
+	print(dict_from_yaml)
+	```
+1. Put `JohnD.yaml` (of the previous section) in the folder where `yaml_test.py` exists.  
+1. Run `yaml_test.py`. The output is as follows:
+	```
+	{'firstname': 'John', 'lastname': 'Doe', 'age': 33, 'education':
+	[{'highschool': [{'name': 'ABC High', 'GPA': 3.45}],
+	'college': [{'name': 'DEF University', 'GPA': 3.78}]}]}
+	```
+
+# Anaconda
+
+## Basic Commands
+
+- `conda list`: List all installed packages in current virtual environment using conda.
+- `conda create -n ENV_NAME`: Create a virtual environment called ENV_NAME under Anaconda.
+- `conda activate ENV_NAME`: Activate a virtual environment named ENV_NAME.
+- `conda deactivate`: Deactivate current virtual environment.
+
+## How to run Anaconda Python in Notepad++
+
 Source: [Here](https://samyzaf.com/braude/PYTHON/notepad.txt)
-## Useful Packages
-### Machine Learning / Deep Learning
-#### torchinfo
+
+# Useful Packages
+
+## Machine Learning / Deep Learning
+
+### torchinfo
+
 - Updated in this doc: 2021-06-08
 - Source: https://github.com/TylerYep/torchinfo
 - This package shows PyTorch network information per layer in a similar form of TensorFlow's `model.summary()`; it can show layer type, kernel shape, output shape, param #, FLOPs, etc.
